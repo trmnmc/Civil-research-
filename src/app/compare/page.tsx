@@ -24,6 +24,10 @@ import { Button } from "@/components/ui/button";
 import { ClassificationBadge } from "@/components/app/evidence";
 import { Transcript } from "@/components/app/Transcript";
 
+function truncate(s: string): string {
+  return s.length > 42 ? `${s.slice(0, 40).trimEnd()}…` : s;
+}
+
 const STATEMENT_LABELS: Record<string, string> = {
   "shared-fact": "Shared factual ground",
   "information-differs": "Different information available",
@@ -253,7 +257,7 @@ export default function ComparePage() {
                           href={`/source/${encodeURIComponent(id)}`}
                           className="text-accent hover:underline"
                         >
-                          {records.get(id)?.title.slice(0, 40) ?? id}
+                          {truncate(records.get(id)?.title ?? id)}
                         </Link>
                         {j < s.leftEvidence.length - 1 ? "; " : ""}
                       </span>
@@ -267,7 +271,7 @@ export default function ComparePage() {
                           href={`/source/${encodeURIComponent(id)}`}
                           className="text-accent hover:underline"
                         >
-                          {records.get(id)?.title.slice(0, 40) ?? id}
+                          {truncate(records.get(id)?.title ?? id)}
                         </Link>
                         {j < s.rightEvidence.length - 1 ? "; " : ""}
                       </span>

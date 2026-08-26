@@ -139,8 +139,12 @@ export function comparePerspectives(
     statements.push({
       kind: "language-differs",
       text: `Vocabulary diverges${lWords.length ? `: the left sources use ${lWords.slice(0, 3).join(", ")}` : ""}${rWords.length ? `${lWords.length ? "; " : ": "}the right sources use ${rWords.slice(0, 3).join(", ")}` : ""}. Word choice marks political framing in this period.`,
-      leftEvidence: lWords.flatMap((w) => lVocab.get(w) ?? []).slice(0, 4).map((r) => r.id),
-      rightEvidence: rWords.flatMap((w) => rVocab.get(w) ?? []).slice(0, 4).map((r) => r.id),
+      leftEvidence: [
+        ...new Set(lWords.flatMap((w) => (lVocab.get(w) ?? []).map((r) => r.id))),
+      ].slice(0, 4),
+      rightEvidence: [
+        ...new Set(rWords.flatMap((w) => (rVocab.get(w) ?? []).map((r) => r.id))),
+      ].slice(0, 4),
     });
   }
 
