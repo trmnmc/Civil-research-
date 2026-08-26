@@ -1,0 +1,30 @@
+{
+ "_provenance": {
+  "request_url": "same search as chronam_search_first_result.json",
+  "recorded_in": "LibraryOfCongress/data-exploration: loc.gov JSON API/Chronicling_America/ChronAm_basic_API tasks.ipynb, code cell index 10 (search_result['pagination'])",
+  "note": "The 'pagination' object of a loc.gov search response. Converted losslessly from saved execute_result."
+ },
+ "current": 1,
+ "first": null,
+ "from": 1,
+ "last": null,
+ "next": null,
+ "of": 2,
+ "page_list": [
+  {
+   "number": 1,
+   "url": null
+  }
+ ],
+ "perpage": 40,
+ "perpage_options": [
+  20,
+  40,
+  80,
+  160
+ ],
+ "previous": null,
+ "results": "1 - 2",
+ "to": 2,
+ "total": 1
+}

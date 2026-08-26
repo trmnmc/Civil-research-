@@ -1,0 +1,45 @@
+{
+ "_provenance": {
+  "request_url": "https://www.loc.gov/?fo=json&at=trending_content",
+  "recorded_in": "LibraryOfCongress/data-exploration: loc.gov JSON API/LOC.gov JSON API.ipynb, code cell index 1 (saved execute_result)",
+  "note": "Demonstrates the at= parameter selecting one key of the response. Converted losslessly from saved execute_result."
+ },
+ "trending_content": [
+  {
+   "link": "/item/prn-20-032/",
+   "image": "/static/home/images/trending/collections/loc-collectionsapp_480x309.jpg",
+   "portal": "New App",
+   "title": "LOC Collections App Puts Digital Treasures in Your Hand"
+  },
+  {
+   "link": "https://blogs.loc.gov/loc/2020/06/the-most-mysterious-woman-identified/",
+   "image": "/static/home/images/trending/blogs/mystery-woman-found_480x309.jpg",
+   "portal": "Blog",
+   "title": "Mystery Woman Identified!"
+  },
+  {
+   "link": "https://guides.loc.gov/american-revolution",
+   "image": "/static/home/images/trending/researchers/american-revolution_480x309.jpg",
+   "portal": "Celebrate",
+   "title": "The American Revolution: A Resource Guide"
+  },
+  {
+   "link": "https://blogs.loc.gov/loc/2020/06/how-will-we-remember-covid-19/",
+   "image": "/static/home/images/trending/blogs/pandemic_480x309.jpg",
+   "portal": "Blog",
+   "title": "How Will We Remember COVID? The Library Documents a Pandemic"
+  },
+  {
+   "link": "/exhibits/",
+   "image": "/static/home/images/trending/exhibits/exhibitions-evergreen-suffrage-48079406641_69c1146579_k.jpg",
+   "portal": "Exhibitions",
+   "title": "Visit Fascinating Library Exhibitions Online"
+  },
+  {
+   "link": "/news/",
+   "image": "/static/home/images/trending/evergreen/tj-lights-48079402371.jpg",
+   "portal": "News",
+   "title": "Get the Most Current News from the Library of Congress"
+  }
+ ]
+}

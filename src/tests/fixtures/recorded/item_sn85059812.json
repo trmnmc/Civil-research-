@@ -1,0 +1,1604 @@
+{
+ "_provenance": {
+  "request_url": "https://www.loc.gov/item/sn85059812/?fo=json",
+  "recorded_in": "LibraryOfCongress/data-exploration: loc.gov JSON API/Chronicling_America_Title_Essay_Datasets/download.ipynb, code cell index 32 (saved execute_result)",
+  "note": "Saved notebook output was a Python-repr of the parsed JSON; converted losslessly to JSON via ast.literal_eval. Full response, no truncation observed in the notebook output."
+ },
+ "articles_and_essays": null,
+ "cite_this": {
+  "apa": "(1901, January 1)  <cite>The Advocate Charleston, W. Va. -1913</cite>. Retrieved from the Library of Congress, https://www.loc.gov/item/sn85059812/.",
+  "chicago": "<cite>The Advocate Charleston, W. Va. -1913</cite>. (Charleston, WV), Jan. 1 1901. https://www.loc.gov/item/sn85059812/.",
+  "mla": "<cite>The Advocate Charleston, W. Va. -1913</cite>. (Charleston, WV) 1 Jan. 1901. Retrieved from the Library of Congress, www.loc.gov/item/sn85059812/."
+ },
+ "holdings_url": "https://www.loc.gov/item/sn85059812/?st=holdings",
+ "item": {
+  "_version_": 1746559459402973184,
+  "access_restricted": false,
+  "aka": [
+   "http://lccn.loc.gov/sn85059812",
+   "http://www.loc.gov/item/sn85059812/"
+  ],
+  "batch": [
+   "wvu_lincoln_ver01"
+  ],
+  "call_number": [
+   "ISSN RECORD"
+  ],
+  "campaigns": [],
+  "composite_location": [
+   "0/united states/",
+   "1/united states/west virginia/",
+   "2/united states/west virginia/kanawha/",
+   "3/united states/west virginia/kanawha/charleston/"
+  ],
+  "control_number": "",
+  "created_published": [
+   "Charleston, W. Va. : Advocate Pub. Co."
+  ],
+  "date": "1901",
+  "dates_of_publication": "1901-1913",
+  "description": [
+   "Weekly Began in 1901; ceased in 1913? Cf. W. Va. State Gazetteers. \"The Advocate reaches more colored readers than any newspaper in West Virginia.\" Afro-American. Vol. 6, no. 24 (Feb. 7, 1907)."
+  ],
+  "digitized": true,
+  "display_offsite": true,
+  "essay": "<p>Established in 1901, the <em>Advocate</em> served Charleston&#8217;s and West Virginia&#8217;s African-American communities via its weekly columns. Reaching a wide African-American audience and promising them &#8220;more news than any other race paper published,&#8221; the <em>Advocate</em> indeed offered its readers a plethora of local, state, and national news. The paper paid especial attention to African-American political and social affairs.</p>\n\n<p>The founder of the <em>Advocate</em> was Samuel Starks, the first African-American state librarian for West Virginia. Starks was also a member and eventual leader of the Colored Knights of Pythias, an inclusive, international fraternal organization. The <em>Advocate</em>&#8216;s offices were located in Charleston&#8217;s Pythian building. Starks&#8217;s death in 1908 prompted mournful remembrances from admirers across the country, including Booker T. Washington. The paper landed in the hands of John C. Gilmer, one of the <em>Advocate</em>&#8216;s writers, and Gilmer edited the paper until its cessation. He had received his education at Storer College, a historically black institution in Harper&#8217;s Ferry, as well as the University of Pittsburgh (then Western University of Pennsylvania), where he was the first African-American graduate.</p>\n\n<p>The weekly <em>Advocate</em> kept readers abreast of current events, often focusing on racial issues. The paper didn&#8217;t shy away from exposing racial discrimination and violence, including the emotionally laden topic of lynching. Yet the newspaper also covered lighter fare, reporting on civic and religious events, politics, foreign affairs, local gossip, and more. Reflecting the interests of its founder, the affairs of the Colored Knights of Pythias often received extensive coverage.</p>\n\n<p>Politically, the <em>Advocate</em> reflected John Gilmer&#8217;s independent streak. Although the newspaper supported the Republican Party&#8212;the party of Abraham Lincoln and emancipation&#8212;throughout much of its tenure, it was not averse to bucking the party line. In 1912 Gilmer threw his support behind Theodore Roosevelt&#8217;s breakaway Progressive Party, serving as a delegate at the Progressive National Convention. Answering the charge that he was a traitor to his race by breaking away from the Republican Party, Gilmer responded by praising the Progressives&#8217; labor policies and called on African-American readers to &#8220;carefully weigh the broken promises of the Republican party and the open hostility of the Democrats with the frank declarations of the Progressives.&#8221; This independent thinking was also exhibited in Gilmer&#8217;s views on race in the South. Gilmer questioned whether whites would ever see African Americans as equals, and instead focused on earning true equality within segregated society. Despite these unorthodox stances, Gilmer was widely respected within the state&#8217;s journalistic and African-American communities.</p>\n\n<p>It is unclear why the <em>Advocate</em>&#8216;s publication ceased in late 1912 or 1913. The paper remains, however, a window into West Virginia&#8217;s vibrant African-American community in the early twentieth century.</p>",
+  "essay_contributor": [
+   "West Virginia University"
+  ],
+  "extract_timestamp": "2022-06-30T14:04:35.295Z",
+  "extract_urls": [
+   "http://lccn.loc.gov/sn85059812#newspaper-titles",
+   "http://lccn.loc.gov/sn85059812#catalog",
+   "https://s3.amazonaws.com/chronam-bib-derivatives/sn85059812.xml#ndnp/newspapers"
+  ],
+  "format": [
+   {
+    "newspaper": "https://www.loc.gov/search/?fa=original_format:newspaper&fo=json"
+   }
+  ],
+  "genre": [
+   "Newspapers"
+  ],
+  "group": [
+   "newspaper-titles",
+   "catalog",
+   "ndnp/newspapers",
+   "main-catalog",
+   "united-states-newspaper-directory"
+  ],
+  "hassegments": false,
+  "holding_data": [
+   {
+    "dates": [
+     "02/1986"
+    ],
+    "description": [
+     "s=<1907:2:7-1912:11:14>"
+    ],
+    "institutions": [
+     {
+      "institution_city": "Morgantown",
+      "institution_name": "West Virginia Newsp Proj",
+      "institution_state": "WV"
+     }
+    ],
+    "more_titles_url": "https://www.loc.gov/collections/directory-of-us-newspapers-in-american-libraries/?fa=number_institution:West+Virginia+Newsp+Proj",
+    "number_holding_type": [
+     "Microfilm Service Copy"
+    ],
+    "source_filename": "https://chronam-bib.s3.amazonaws.com/holdings/metacoll.DLC.lhr.USNP.marcxml.00005.xml"
+   }
+  ],
+  "id": "http://www.loc.gov/item/sn85059812/",
+  "image_url": [],
+  "index": 1,
+  "item": {
+   "call_number": [
+    "ISSN RECORD"
+   ],
+   "created_published": [
+    "Charleston, W. Va. : Advocate Pub. Co."
+   ],
+   "date": "1901",
+   "essay": "<p>Established in 1901, the <em>Advocate</em> served Charleston&#8217;s and West Virginia&#8217;s African-American communities via its weekly columns. Reaching a wide African-American audience and promising them &#8220;more news than any other race paper published,&#8221; the <em>Advocate</em> indeed offered its readers a plethora of local, state, and national news. The paper paid especial attention to African-American political and social affairs.</p>\n\n<p>The founder of the <em>Advocate</em> was Samuel Starks, the first African-American state librarian for West Virginia. Starks was also a member and eventual leader of the Colored Knights of Pythias, an inclusive, international fraternal organization. The <em>Advocate</em>&#8216;s offices were located in Charleston&#8217;s Pythian building. Starks&#8217;s death in 1908 prompted mournful remembrances from admirers across the country, including Booker T. Washington. The paper landed in the hands of John C. Gilmer, one of the <em>Advocate</em>&#8216;s writers, and Gilmer edited the paper until its cessation. He had received his education at Storer College, a historically black institution in Harper&#8217;s Ferry, as well as the University of Pittsburgh (then Western University of Pennsylvania), where he was the first African-American graduate.</p>\n\n<p>The weekly <em>Advocate</em> kept readers abreast of current events, often focusing on racial issues. The paper didn&#8217;t shy away from exposing racial discrimination and violence, including the emotionally laden topic of lynching. Yet the newspaper also covered lighter fare, reporting on civic and religious events, politics, foreign affairs, local gossip, and more. Reflecting the interests of its founder, the affairs of the Colored Knights of Pythias often received extensive coverage.</p>\n\n<p>Politically, the <em>Advocate</em> reflected John Gilmer&#8217;s independent streak. Although the newspaper supported the Republican Party&#8212;the party of Abraham Lincoln and emancipation&#8212;throughout much of its tenure, it was not averse to bucking the party line. In 1912 Gilmer threw his support behind Theodore Roosevelt&#8217;s breakaway Progressive Party, serving as a delegate at the Progressive National Convention. Answering the charge that he was a traitor to his race by breaking away from the Republican Party, Gilmer responded by praising the Progressives&#8217; labor policies and called on African-American readers to &#8220;carefully weigh the broken promises of the Republican party and the open hostility of the Democrats with the frank declarations of the Progressives.&#8221; This independent thinking was also exhibited in Gilmer&#8217;s views on race in the South. Gilmer questioned whether whites would ever see African Americans as equals, and instead focused on earning true equality within segregated society. Despite these unorthodox stances, Gilmer was widely respected within the state&#8217;s journalistic and African-American communities.</p>\n\n<p>It is unclear why the <em>Advocate</em>&#8216;s publication ceased in late 1912 or 1913. The paper remains, however, a window into West Virginia&#8217;s vibrant African-American community in the early twentieth century.</p>",
+   "essay_contributor": [
+    "West Virginia University"
+   ],
+   "format": [
+    "newspaper"
+   ],
+   "genre": [
+    "Newspapers"
+   ],
+   "language": [
+    "eng"
+   ],
+   "location": [
+    "West Virginia--Charleston",
+    "Charleston (W. Va.)"
+   ],
+   "medium": [
+    "volumes"
+   ],
+   "notes": [
+    "Weekly",
+    "Began in 1901; ceased in 1913? Cf. W. Va. State Gazetteers.",
+    "\"The Advocate reaches more colored readers than any newspaper in West Virginia.\"",
+    "Afro-American.",
+    "Vol. 6, no. 24 (Feb. 7, 1907)."
+   ],
+   "raw_lccn": "sn 85059812 ",
+   "source_group": "ndnp/wvu",
+   "subjects": [
+    "African Americans--West Virginia--Charleston--Newspapers",
+    "Charleston (W. Va.)--Newspapers",
+    "African Americans",
+    "West Virginia--Charleston",
+    "United States--West Virginia--Kanawha--Charleston"
+   ],
+   "title": "The advocate."
+  },
+  "item_type": "title",
+  "language": [
+   "english"
+  ],
+  "languages": [
+   {
+    "english": "https://www.loc.gov/search/?fa=language:english&fo=json"
+   }
+  ],
+  "latlong": [
+   38.35016,
+   -81.63895
+  ],
+  "library_of_congress_control_number": "sn85059812",
+  "location": [
+   "kanawha",
+   "united states",
+   "west virginia",
+   "charleston"
+  ],
+  "location_city": [
+   "charleston"
+  ],
+  "location_country": [
+   "united states"
+  ],
+  "location_county": [
+   "kanawha"
+  ],
+  "location_state": [
+   "west virginia"
+  ],
+  "location_str": "Charleston, West Virginia",
+  "locations": [
+   {
+    "charleston": "https://www.loc.gov/search/?fa=location:charleston&fo=json"
+   },
+   {
+    "kanawha": "https://www.loc.gov/search/?fa=location:kanawha&fo=json"
+   },
+   {
+    "united states": "https://www.loc.gov/search/?fa=location:united+states&fo=json"
+   },
+   {
+    "west virginia": "https://www.loc.gov/search/?fa=location:west+virginia&fo=json"
+   }
+  ],
+  "locations_city": [
+   {
+    "charleston": "https://www.loc.gov/search/?fa=location_city:charleston&fo=json"
+   }
+  ],
+  "locations_country": [
+   {
+    "united states": "https://www.loc.gov/search/?fa=location_country:united+states&fo=json"
+   }
+  ],
+  "locations_county": [
+   {
+    "kanawha": "https://www.loc.gov/search/?fa=location_county:kanawha&fo=json"
+   }
+  ],
+  "locations_state": [
+   {
+    "west virginia": "https://www.loc.gov/search/?fa=location_state:west+virginia&fo=json"
+   }
+  ],
+  "locations_str": [
+   {
+    "Charleston, West Virginia": "https://www.loc.gov/search/?fa=location_str:Charleston,+West+Virginia&fo=json"
+   }
+  ],
+  "lonlat": [
+   -81.63895,
+   38.35016
+  ],
+  "medium": [
+   "volumes"
+  ],
+  "notes": [
+   "Weekly",
+   "Began in 1901; ceased in 1913? Cf. W. Va. State Gazetteers.",
+   "\"The Advocate reaches more colored readers than any newspaper in West Virginia.\"",
+   "Afro-American.",
+   "Vol. 6, no. 24 (Feb. 7, 1907)."
+  ],
+  "number": [
+   "west virginia newsp proj",
+   "sn85059812",
+   "2021-09-08t17:28:32.910059",
+   "1",
+   "12920534",
+   "2021-11-24t09:46:51.764528",
+   "microfilm service copy",
+   "online resource",
+   "2574-6464"
+  ],
+  "number_hasessay": [
+   "1"
+  ],
+  "number_holding_type": [
+   "online resource",
+   "microfilm service copy"
+  ],
+  "number_institution": [
+   "west virginia newsp proj"
+  ],
+  "number_issn": [
+   "2574-6464"
+  ],
+  "number_lccn": [
+   "sn85059812"
+  ],
+  "number_oclc": [
+   "12920534"
+  ],
+  "number_source_modified": [
+   "2021-11-24t09:46:51.764528",
+   "2021-09-08t17:28:32.910059"
+  ],
+  "original_format": [
+   "newspaper"
+  ],
+  "other_formats": [
+   {
+    "label": "MARCXML Record",
+    "link": "https://lccn.loc.gov/sn85059812/marcxml"
+   },
+   {
+    "label": "MODS Record",
+    "link": "https://lccn.loc.gov/sn85059812/mods"
+   },
+   {
+    "label": "Dublin Core Record",
+    "link": "https://lccn.loc.gov/sn85059812/dc"
+   }
+  ],
+  "other_title": [],
+  "partof": [
+   {
+    "count": 1,
+    "title": "the advocate (charleston, w. va.) 1901-1913",
+    "url": "https://www.loc.gov/search/?fa=partof:the+advocate+%28charleston,+w.+va.%29+1901-1913&fo=json"
+   },
+   {
+    "count": 154979,
+    "title": "directory of us newspapers in american libraries",
+    "url": "https://www.loc.gov/collections/directory-of-us-newspapers-in-american-libraries/?fo=json"
+   },
+   {
+    "count": 267046,
+    "title": "chronicling america",
+    "url": "https://www.loc.gov/collections/chronicling-america/?fo=json"
+   },
+   {
+    "count": 277009,
+    "title": "serial and government publications division",
+    "url": "https://www.loc.gov/search/?fa=partof:serial+and+government+publications+division&fo=json"
+   },
+   {
+    "count": 1343565,
+    "title": "catalog",
+    "url": "https://www.loc.gov/search/?fa=partof:catalog&fo=json"
+   }
+  ],
+  "partof_collection": [
+   "chronicling america",
+   "directory of us newspapers in american libraries"
+  ],
+  "partof_division": [
+   "serial and government publications division"
+  ],
+  "partof_title": [
+   "the advocate (charleston, w. va.) 1901-1913"
+  ],
+  "publication_frequency": [
+   "weekly"
+  ],
+  "raw_lccn": "sn 85059812 ",
+  "resources": [],
+  "rights": [
+   "<p>The Library of Congress believes that the newspapers in Chronicling America are in the public domain or have no known copyright restrictions.  Newspapers published in the United States more than 95 years ago are in the public domain in their entirety. Any newspapers in Chronicling America that were published less than 95 years ago are also believed to be in the public domain, but may contain some copyrighted third party materials. Researchers using newspapers published less than 95 years ago should be alert for modern content (for example, registered and renewed for copyright and published with notice) that may be copyrighted.  Responsibility for making an independent legal assessment of an item and securing any necessary permissions ultimately rests with persons desiring to use the item.</p>\n<p>The NEH awardee responsible for producing each digital object is presented in the Chronicling America page display, below the page image  \u2013 e.g. Image produced by the Library of Congress. For more information on current NDNP awardees, see <a href=\"https://www.loc.gov/ndnp/listawardees.html\">https://www.loc.gov/ndnp/listawardees.html</a>.</p>\n<p>For more information on Library of Congress policies and disclaimers regarding rights and reproductions, see <a href=\"https://www.loc.gov/homepage/legal.html\">https://www.loc.gov/homepage/legal.html</a></p>"
+  ],
+  "score": 7.499361,
+  "shelf_id": "ISSN RECORD",
+  "site": [
+   "chroniclingamerica",
+   "catalog",
+   "usnd"
+  ],
+  "source_group": "ndnp/wvu",
+  "subject": [
+   "newspapers",
+   "charleston (w. va.)",
+   "united states",
+   "west virginia",
+   "kanawha",
+   "charleston",
+   "african american",
+   "african americans"
+  ],
+  "subject_ethnicity": [
+   "african american"
+  ],
+  "subject_headings": [
+   "African Americans--West Virginia--Charleston--Newspapers",
+   "Charleston (W. Va.)--Newspapers",
+   "African Americans",
+   "West Virginia--Charleston",
+   "United States--West Virginia--Kanawha--Charleston"
+  ],
+  "subjects": [
+   {
+    "african american": "https://www.loc.gov/search/?fa=subject:african+american&fo=json"
+   },
+   {
+    "african americans": "https://www.loc.gov/search/?fa=subject:african+americans&fo=json"
+   },
+   {
+    "charleston": "https://www.loc.gov/search/?fa=subject:charleston&fo=json"
+   },
+   {
+    "charleston (w. va.)": "https://www.loc.gov/search/?fa=subject:charleston+%28w.+va.%29&fo=json"
+   },
+   {
+    "kanawha": "https://www.loc.gov/search/?fa=subject:kanawha&fo=json"
+   },
+   {
+    "newspapers": "https://www.loc.gov/search/?fa=subject:newspapers&fo=json"
+   },
+   {
+    "united states": "https://www.loc.gov/search/?fa=subject:united+states&fo=json"
+   },
+   {
+    "west virginia": "https://www.loc.gov/search/?fa=subject:west+virginia&fo=json"
+   }
+  ],
+  "subjects_ethnicity": [
+   {
+    "african american": "https://www.loc.gov/search/?fa=subject_ethnicity:african+american&fo=json"
+   }
+  ],
+  "timestamp": "2022-10-13T08:14:58.506Z",
+  "title": "The Advocate (Charleston, W. Va.) 1901-1913",
+  "type": [
+   "newspaper"
+  ],
+  "url": "https://www.loc.gov/item/sn85059812/"
+ },
+ "more_like_this": [
+  {
+   "access_restricted": false,
+   "aka": [
+    "http://www.loc.gov/item/sn85059815/",
+    "http://lccn.loc.gov/sn85059815"
+   ],
+   "batch": [
+    "wvu_gorn_ver01"
+   ],
+   "campaigns": [],
+   "date": "1894",
+   "description": [
+    "Weekly Began in 1894. \"A religious journal.\" Editor: Rev. C.B. Graham. Members of the Methodist-Episcopal Church. Archived issues are available in digital format from the Library of Congress Chronicling America online collection. Description based on: Vol. 2, no. 4 (Jan. 1895)."
+   ],
+   "digitized": true,
+   "extract_timestamp": "2022-06-30T14:04:35.295Z",
+   "group": [
+    "newspaper-titles",
+    "catalog",
+    "ndnp/newspapers",
+    "main-catalog",
+    "united-states-newspaper-directory"
+   ],
+   "hassegments": false,
+   "id": "http://www.loc.gov/item/sn85059815/",
+   "image_url": [],
+   "index": 1,
+   "language": [
+    "english"
+   ],
+   "latlong": [
+    38.35016,
+    -81.63895
+   ],
+   "location": [
+    "kanawha",
+    "united states",
+    "west virginia",
+    "charleston"
+   ],
+   "location_str": "",
+   "lonlat": [
+    -81.63895,
+    38.35016
+   ],
+   "number": [
+    "sn85059815",
+    "west virginia newsp proj",
+    "12920587",
+    "2640-1851",
+    "library of virginia, the",
+    "2021-09-08t17:28:32.910059",
+    "1",
+    "microfilm service copy",
+    "microform",
+    "2021-11-24t09:46:51.764528",
+    "online resource"
+   ],
+   "original_format": [
+    "newspaper"
+   ],
+   "other_title": [],
+   "partof": [
+    "the charleston advocate (charleston, w. va.) 1894-189?",
+    "catalog",
+    "directory of us newspapers in american libraries",
+    "serial and government publications division",
+    "chronicling america"
+   ],
+   "publication_frequency": [
+    "weekly"
+   ],
+   "score": 4.732917,
+   "shelf_id": "Newspaper",
+   "site": [
+    "chroniclingamerica",
+    "catalog",
+    "usnd"
+   ],
+   "subject": [
+    "newspapers",
+    "charleston (w. va.)",
+    "united states",
+    "west virginia",
+    "kanawha",
+    "charleston"
+   ],
+   "timestamp": "2022-10-13T08:14:58.506Z",
+   "title": "The Charleston advocate.",
+   "type": "title",
+   "url": "https://www.loc.gov/item/sn85059815/"
+  },
+  {
+   "access_restricted": false,
+   "aka": [
+    "http://virginiachronicle.com/",
+    "http://lccn.loc.gov/sn85059862",
+    "http://www.loc.gov/item/sn85059862/"
+   ],
+   "batch": [
+    "wvu_hogan_ver01"
+   ],
+   "campaigns": [],
+   "date": "1856",
+   "description": [
+    "Weekly Vol. 2, no. 23 (Sept. 30, 1856)- Ceased July 2, 1861. Cf. Simmons, R. Star of the Kanawha Valley. \"State sovereignty & a constitutional union.\" Available on microfilm from U.M.I. Archived issues are available in digital format from the Library of Congress Chronicling America online collection."
+   ],
+   "digitized": true,
+   "extract_timestamp": "2022-06-30T14:04:35.295Z",
+   "group": [
+    "newspaper-titles",
+    "catalog",
+    "ndnp/newspapers",
+    "main-catalog",
+    "united-states-newspaper-directory"
+   ],
+   "hassegments": false,
+   "id": "http://www.loc.gov/item/sn85059862/",
+   "image_url": [],
+   "index": 2,
+   "language": [
+    "english"
+   ],
+   "latlong": [
+    38.35016,
+    -81.63895
+   ],
+   "location": [
+    "kanawha",
+    "united states",
+    "west virginia",
+    "charleston"
+   ],
+   "location_str": "",
+   "lonlat": [
+    -81.63895,
+    38.35016
+   ],
+   "number": [
+    "west virginia newsp proj",
+    "2022-07-08t06:56:49",
+    "12926190",
+    "sn85059861",
+    "library of virginia, the",
+    "2021-09-08t17:28:32.910059",
+    "1",
+    "2373-3772",
+    "microfilm service copy",
+    "sn85059862",
+    "kanawha cnty pub libr",
+    "microform",
+    "2021-11-24t09:46:51.764528",
+    "univ of kentucky libr",
+    "online resource"
+   ],
+   "original_format": [
+    "newspaper"
+   ],
+   "other_title": [],
+   "partof": [
+    "directory of us newspapers in american libraries",
+    "catalog",
+    "kanawha valley star (charleston, va. [w. va.]) 1856-1861",
+    "serial and government publications division",
+    "chronicling america"
+   ],
+   "publication_frequency": [
+    "weekly"
+   ],
+   "score": 4.732917,
+   "shelf_id": "Newspaper",
+   "site": [
+    "chroniclingamerica",
+    "catalog",
+    "usnd"
+   ],
+   "subject": [
+    "newspapers",
+    "charleston (w. va.)",
+    "united states",
+    "west virginia",
+    "kanawha",
+    "charleston"
+   ],
+   "timestamp": "2022-10-13T08:14:58.506Z",
+   "title": "Kanawha Valley star.",
+   "type": "title",
+   "url": "https://www.loc.gov/item/sn85059862/"
+  },
+  {
+   "access_restricted": false,
+   "aka": [
+    "http://www.loc.gov/item/sn85059867/",
+    "http://lccn.loc.gov/sn85059867"
+   ],
+   "batch": [
+    "wvu_gorn_ver01"
+   ],
+   "campaigns": [],
+   "date": "1874",
+   "description": [
+    "Biweekly Began in 1874; ceased in 1874. Cf. Hardesty, H.H. Hardesty's Historical and Geographical Encyclopedia ... Kanawha County, W. Va. \"Prohibition our country' hope: Total abstinence our only safeguard.\" Editors: S.G. Crouch & J.B. Crouch. Archived issues are available in digital format from the Library of Congress Chronicling America online collection. Description based on: Vol. 1, no. 7 (Nov. 30, 1874)."
+   ],
+   "digitized": true,
+   "extract_timestamp": "2022-06-30T14:04:35.295Z",
+   "group": [
+    "newspaper-titles",
+    "catalog",
+    "ndnp/newspapers",
+    "main-catalog",
+    "united-states-newspaper-directory"
+   ],
+   "hassegments": false,
+   "id": "http://www.loc.gov/item/sn85059867/",
+   "image_url": [],
+   "index": 3,
+   "language": [
+    "english"
+   ],
+   "latlong": [
+    38.35016,
+    -81.63895
+   ],
+   "location": [
+    "kanawha",
+    "united states",
+    "west virginia",
+    "charleston"
+   ],
+   "location_str": "",
+   "lonlat": [
+    -81.63895,
+    38.35016
+   ],
+   "number": [
+    "sn85059867",
+    "2640-4869",
+    "2021-09-08t17:28:32.910059",
+    "1",
+    "2021-11-24t09:46:51.764528",
+    "12926214",
+    "online resource"
+   ],
+   "original_format": [
+    "newspaper"
+   ],
+   "other_title": [
+    "Temperance star and home magazine"
+   ],
+   "partof": [
+    "catalog",
+    "the temperance star (charleston, w. va.) 1874-1874",
+    "directory of us newspapers in american libraries",
+    "serial and government publications division",
+    "chronicling america"
+   ],
+   "publication_frequency": [
+    "biweekly"
+   ],
+   "score": 4.732917,
+   "shelf_id": "Newspaper",
+   "site": [
+    "chroniclingamerica",
+    "catalog",
+    "usnd"
+   ],
+   "subject": [
+    "newspapers",
+    "charleston (w. va.)",
+    "united states",
+    "west virginia",
+    "kanawha",
+    "charleston"
+   ],
+   "timestamp": "2022-10-13T08:14:58.506Z",
+   "title": "The temperance star.",
+   "type": "title",
+   "url": "https://www.loc.gov/item/sn85059867/"
+  },
+  {
+   "access_restricted": false,
+   "aka": [
+    "http://www.loc.gov/item/sn84026789/",
+    "http://lccn.loc.gov/sn84026789",
+    "https://www.virginiachronicle.com"
+   ],
+   "batch": [
+    "wvu_gorn_ver01"
+   ],
+   "campaigns": [],
+   "date": "1864",
+   "description": [
+    "Weekly Vol. 1, no. 1 (Oct. 26, 1864)- Ceased in 1877? Cf. Hardesty, H.H. Hardesty's Historical and Geographical Encyclopedia ... Kanawha Co., W. Va. \"Republican and pro-union.\" Publishers: S.S. and E.T. Moore, 1864; Moore Bros. and George W. Atkinson, 1864-1870; Moore Bros., Atkinson and A.F. Gibbens, 1870-1876; W.L. Moore & Co., 1876-1877. Archived issues are available in digital format from the Library of Congress Chronicling America online collection."
+   ],
+   "digitized": true,
+   "extract_timestamp": "2022-06-30T14:04:35.295Z",
+   "group": [
+    "newspaper-titles",
+    "catalog",
+    "ndnp/newspapers",
+    "main-catalog",
+    "united-states-newspaper-directory"
+   ],
+   "hassegments": false,
+   "id": "http://www.loc.gov/item/sn84026789/",
+   "image_url": [],
+   "index": 4,
+   "language": [
+    "english"
+   ],
+   "latlong": [
+    38.35016,
+    -81.63895
+   ],
+   "location": [
+    "kanawha",
+    "united states",
+    "west virginia",
+    "charleston"
+   ],
+   "location_str": "",
+   "lonlat": [
+    -81.63895,
+    38.35016
+   ],
+   "number": [
+    "west virginia newsp proj",
+    "10671693",
+    "new york hist soc, newsp proj",
+    "2640-494x",
+    "duke univ libr",
+    "virginia historical society library",
+    "library of virginia, the",
+    "2021-09-08t17:28:32.910059",
+    "1",
+    "american antiquarian soc, newsp proj",
+    "microfilm service copy",
+    "microform",
+    "2021-11-24t09:46:51.764528",
+    "univ of kentucky libr",
+    "sn84026789",
+    "online resource",
+    "original"
+   ],
+   "original_format": [
+    "newspaper"
+   ],
+   "other_title": [],
+   "partof": [
+    "chronicling america",
+    "catalog",
+    "directory of us newspapers in american libraries",
+    "the west virginia journal (charleston, w. va.) 1864-1877",
+    "serial and government publications division"
+   ],
+   "publication_frequency": [
+    "weekly"
+   ],
+   "score": 4.732917,
+   "shelf_id": "Newspaper",
+   "site": [
+    "chroniclingamerica",
+    "catalog",
+    "usnd"
+   ],
+   "subject": [
+    "newspapers",
+    "charleston (w. va.)",
+    "united states",
+    "west virginia",
+    "kanawha",
+    "charleston"
+   ],
+   "timestamp": "2022-10-13T08:01:14.182Z",
+   "title": "The West Virginia journal.",
+   "type": "title",
+   "url": "https://www.loc.gov/item/sn84026789/"
+  },
+  {
+   "access_restricted": false,
+   "aka": [
+    "http://lccn.loc.gov/sn85059855",
+    "http://www.loc.gov/item/sn85059855/"
+   ],
+   "batch": [
+    "wvu_brubeck_ver02"
+   ],
+   "campaigns": [],
+   "date": "1906",
+   "description": [
+    "Weekly Began May 24, 1906. Ceased in 1915? \"Vote the Socialist ticket and free your class from wage slavery.\" \"Published in the interest of the great majority -- the working class.\" Editor: C.H. Boswell. Archived issues are available in digital format from the Library of Congress Chronicling America online collection. \"Official organ of the Socialist Party.\" Merged with: Socialist and labor star (Huntington, W. Va.), to form: The Argus-star (non-extant). Description based on: Vol. 7, no. 9 (Jan. 2, 1913)=w. no. 348; title from caption. Socialist and labor star 2640-3803 (DLC)sn 85059765 (OCoLC)12897672 Argus-star"
+   ],
+   "digitized": true,
+   "extract_timestamp": "2022-06-30T14:04:35.028Z",
+   "group": [
+    "newspaper-titles",
+    "catalog",
+    "ndnp/newspapers",
+    "main-catalog",
+    "united-states-newspaper-directory"
+   ],
+   "hassegments": false,
+   "id": "http://www.loc.gov/item/sn85059855/",
+   "image_url": [],
+   "index": 5,
+   "language": [
+    "english"
+   ],
+   "latlong": [
+    38.35016,
+    -81.63895
+   ],
+   "location": [
+    "kanawha",
+    "united states",
+    "west virginia",
+    "charleston"
+   ],
+   "location_str": "",
+   "lonlat": [
+    -81.63895,
+    38.35016
+   ],
+   "number": [
+    "sn85059765",
+    "12926141",
+    "sn85059855",
+    "west virginia newsp proj",
+    "2021-09-08t17:28:32.910059",
+    "1",
+    "microfilm service copy",
+    "kanawha cnty pub libr",
+    "2021-11-24t09:46:51.764528",
+    "online resource",
+    "2471-2213"
+   ],
+   "original_format": [
+    "newspaper"
+   ],
+   "other_title": [],
+   "partof": [
+    "catalog",
+    "the labor argus (charleston, w. va.) 1906-1915",
+    "directory of us newspapers in american libraries",
+    "serial and government publications division",
+    "chronicling america"
+   ],
+   "publication_frequency": [
+    "weekly"
+   ],
+   "score": 4.420828,
+   "shelf_id": "Newspaper HX1 .L1313",
+   "site": [
+    "chroniclingamerica",
+    "catalog",
+    "usnd"
+   ],
+   "subject": [
+    "newspapers",
+    "charleston (w. va.)",
+    "periodicals",
+    "united states",
+    "socialism",
+    "west virginia",
+    "kanawha",
+    "charleston",
+    "working class"
+   ],
+   "timestamp": "2022-10-13T08:14:58.506Z",
+   "title": "The labor argus.",
+   "type": "title",
+   "url": "https://www.loc.gov/item/sn85059855/"
+  },
+  {
+   "access_restricted": false,
+   "aka": [
+    "http://www.loc.gov/item/sn85059834/",
+    "http://lccn.loc.gov/sn85059834"
+   ],
+   "batch": [
+    "wvu_gorn_ver01"
+   ],
+   "campaigns": [],
+   "date": "1862",
+   "description": [
+    "Daily Began in 1862. Archived issues are available in digital format from the Library of Congress Chronicling America online collection. Description based on: Vol. 1, no. 2 (Sept. 29, 1862)."
+   ],
+   "digitized": true,
+   "extract_timestamp": "2022-06-30T14:04:35.295Z",
+   "group": [
+    "newspaper-titles",
+    "catalog",
+    "ndnp/newspapers",
+    "main-catalog",
+    "united-states-newspaper-directory"
+   ],
+   "hassegments": false,
+   "id": "http://www.loc.gov/item/sn85059834/",
+   "image_url": [],
+   "index": 6,
+   "language": [
+    "english"
+   ],
+   "latlong": [
+    38.35016,
+    -81.63895
+   ],
+   "location": [
+    "kanawha",
+    "united states",
+    "west virginia",
+    "charleston"
+   ],
+   "location_str": "",
+   "lonlat": [
+    -81.63895,
+    38.35016
+   ],
+   "number": [
+    "west virginia newsp proj",
+    "12923891",
+    "virginia historical society library",
+    "2640-2033",
+    "library of virginia, the",
+    "2021-09-08t17:28:32.910059",
+    "1",
+    "2020-03-24t07:57:44",
+    "microfilm service copy",
+    "microform",
+    "2021-11-24t09:46:51.764528",
+    "univ of kentucky libr",
+    "sn85059834",
+    "online resource",
+    "original"
+   ],
+   "original_format": [
+    "newspaper"
+   ],
+   "other_title": [],
+   "partof": [
+    "the guerilla (charleston, va. [w. va.]) 1862-186?",
+    "catalog",
+    "directory of us newspapers in american libraries",
+    "serial and government publications division",
+    "chronicling america"
+   ],
+   "publication_frequency": [
+    "daily"
+   ],
+   "score": 4.094357,
+   "shelf_id": "Newspaper",
+   "site": [
+    "chroniclingamerica",
+    "catalog",
+    "usnd"
+   ],
+   "subject": [
+    "(united states",
+    ")",
+    "newspapers",
+    "charleston (w. va.)",
+    "civil war",
+    "united states",
+    "west virginia",
+    "kanawha",
+    "charleston",
+    "american civil war",
+    "history"
+   ],
+   "timestamp": "2022-10-13T08:14:58.506Z",
+   "title": "The guerilla.",
+   "type": "title",
+   "url": "https://www.loc.gov/item/sn85059834/"
+  }
+ ],
+ "options": {
+  "access_group": [
+   ""
+  ],
+  "access_group_raw": "",
+  "all": null,
+  "api_version": "1",
+  "app_context": null,
+  "application_version": "$Revision$",
+  "attribute": null,
+  "attribute!": null,
+  "attribute_map": null,
+  "cache_tags": [
+   "newspaper-titles",
+   "catalog",
+   "ndnp/newspapers",
+   "main-catalog",
+   "united-states-newspaper-directory",
+   "gmd.mar",
+   "general-maps",
+   "paprika-iabooks",
+   "coll",
+   "groups-of-images",
+   "nclc",
+   "national-child-labor-committee"
+  ],
+  "callback": null,
+  "clip": null,
+  "clip_image_width": null,
+  "clip_rotation": null,
+  "content_filter": null,
+  "content_replacement": "",
+  "count": null,
+  "dates": null,
+  "default_count": 25,
+  "delimiter": null,
+  "digital_id": null,
+  "display_level": null,
+  "distance": null,
+  "downloadOption": null,
+  "duration": 0.6472959518432617,
+  "embed": [],
+  "embed!": [],
+  "excludeTerms": null,
+  "facetLimits": "",
+  "facetPrefix": null,
+  "facet_count": null,
+  "facet_style": null,
+  "field": null,
+  "format": "json",
+  "host": "www.loc.gov",
+  "ical": false,
+  "id": "sn85059812/",
+  "iiif": false,
+  "index": null,
+  "inputEncoding": "UTF-8",
+  "is_portal": null,
+  "item": null,
+  "items": null,
+  "keys": null,
+  "language": null,
+  "latlong": null,
+  "method": "GET",
+  "newSearch": null,
+  "new_clip_url": false,
+  "onsite": false,
+  "operator": null,
+  "outputEncoding": "UTF-8",
+  "page_has_campaign": false,
+  "path_info": "/item/sn85059812/",
+  "port": "443",
+  "proxypath": null,
+  "query_string": "fo=json",
+  "redirect_proxy": false,
+  "redirect_to_item": null,
+  "referer": null,
+  "region": "",
+  "release_id": 123456789,
+  "request_params": {
+   "fo": [
+    "json"
+   ]
+  },
+  "request_url": "https://www.loc.gov/item/sn85059812/?fo=json",
+  "resource": "",
+  "resource_sequence": null,
+  "scheme": "https",
+  "searchIn": null,
+  "searchTerms": "",
+  "segments": null,
+  "site_id": null,
+  "site_type": null,
+  "solrQuery": "",
+  "sortBy": null,
+  "sortOrder": null,
+  "startPage": null,
+  "style": null,
+  "suggested": null,
+  "target": null,
+  "template": "item/base",
+  "timestamp": 1665704407.087899,
+  "unionFacets": "",
+  "webcast_permalink": null
+ },
+ "related_items": [
+  {
+   "access_restricted": false,
+   "aka": [
+    "http://www.loc.gov/resource/g3894c.ct006793/",
+    "http://www.loc.gov/item/2006636200/",
+    "http://hdl.loc.gov/loc.gmd/g3894c.ct006793",
+    "http://lccn.loc.gov/2006636200"
+   ],
+   "campaigns": [],
+   "contributor": [
+    "freedley & morris"
+   ],
+   "date": "1874",
+   "dates": [
+    "1874-01-01T00:00:00Z"
+   ],
+   "description": [
+    "Shows outlines, location, and construction types of buildings. Prime meridian: Washington. Pen-and-ink and watercolor on tracing paper. Freedley & Morris business card pasted on left of title. Available also through the Library of Congress Web site as a raster image."
+   ],
+   "digitized": true,
+   "extract_timestamp": "2021-11-12T17:10:55.249Z",
+   "group": [
+    "gmd.mar",
+    "catalog",
+    "general-maps",
+    "main-catalog"
+   ],
+   "hassegments": false,
+   "id": "http://www.loc.gov/item/2006636200/",
+   "image_url": [
+    "https://tile.loc.gov/storage-services/service/gmd/gmd389/g3894/g3894c/ct006793.gif",
+    "https://tile.loc.gov/storage-services/service/gmd/gmd389/g3894/g3894c/ct006793.gif#h=142&w=150",
+    "https://tile.loc.gov/image-services/iiif/service:gmd:gmd389:g3894:g3894c:ct006793/full/pct:12.5/0/default.jpg#h=1368&w=1449",
+    "https://tile.loc.gov/image-services/iiif/service:gmd:gmd389:g3894:g3894c:ct006793/full/pct:25/0/default.jpg#h=2737&w=2898"
+   ],
+   "index": 1,
+   "language": [
+    "english"
+   ],
+   "location": [
+    "united states",
+    "charleston",
+    "west virginia"
+   ],
+   "mime_type": [
+    "image/gif",
+    "image/tiff",
+    "image/jpeg",
+    "image/jp2"
+   ],
+   "number": [
+    "http://www.loc.gov/item/14651703",
+    "2016-10-07t11:16:24",
+    "http://www.loc.gov/item/2006636200",
+    "2006636200"
+   ],
+   "online_format": [
+    "image"
+   ],
+   "original_format": [
+    "map"
+   ],
+   "other_title": [],
+   "partof": [
+    "american memory",
+    "cities and towns",
+    "catalog",
+    "geography and map division"
+   ],
+   "score": 1.6817979,
+   "shelf_id": "G3894.C4G475 1874 .F7",
+   "site": [
+    "ammem",
+    "catalog"
+   ],
+   "subject": [
+    "maps, manuscript",
+    "charleston (w. va.)",
+    "united states",
+    "maps",
+    "west virginia",
+    "charleston",
+    "fire insurance"
+   ],
+   "timestamp": "2021-11-18T15:49:00.265Z",
+   "title": "Insurance map of Charleston, W. Va.",
+   "url": "https://www.loc.gov/item/2006636200/"
+  },
+  {
+   "access_restricted": false,
+   "aka": [
+    "http://lccn.loc.gov/09001965",
+    "http://www.loc.gov/item/09001965/",
+    "http://www.loc.gov/resource/gdcmassbookdig.centurychronicle00char/",
+    "https://hdl.loc.gov/loc.gdc/scd0001.00144404129",
+    "http://www.loc.gov/resource/scd0001.00144404129/"
+   ],
+   "campaigns": [],
+   "contributor": [
+    "charleston, w. va. chamber of commerce"
+   ],
+   "date": "1901",
+   "dates": [
+    "1901-01-01T00:00:00Z"
+   ],
+   "description": [
+    "Also available in digital form."
+   ],
+   "digitized": true,
+   "extract_timestamp": "2022-04-16T21:03:31.634Z",
+   "group": [
+    "paprika-iabooks",
+    "catalog",
+    "main-catalog"
+   ],
+   "hassegments": true,
+   "id": "http://www.loc.gov/item/09001965/",
+   "image_url": [
+    "https://tile.loc.gov/image-services/iiif/public:gdcmassbookdig:centurychronicle00char:centurychronicle00char_0007/full/pct:25.0/0/default.jpg#h=842&w=515",
+    "https://tile.loc.gov/image-services/iiif/public:gdcmassbookdig:centurychronicle00char:centurychronicle00char_0007/full/pct:50.0/0/default.jpg#h=1685&w=1031",
+    "https://tile.loc.gov/image-services/iiif/public:gdcmassbookdig:centurychronicle00char:centurychronicle00char_0007/full/pct:100.0/0/default.jpg#h=3371&w=2062"
+   ],
+   "index": 2,
+   "language": [
+    "english"
+   ],
+   "location": [
+    "charleston",
+    "west virginia"
+   ],
+   "mime_type": [
+    "image/jpeg"
+   ],
+   "number": [
+    "09001965",
+    "2019-01-10t10:14:12"
+   ],
+   "online_format": [
+    "image"
+   ],
+   "original_format": [
+    "book"
+   ],
+   "other_title": [],
+   "partof": [
+    "general collections",
+    "catalog",
+    "selected digitized books"
+   ],
+   "score": 1.6733488,
+   "shelf_id": "F249.C4 C4 Microfilm 68343 F",
+   "site": [
+    "catalog"
+   ],
+   "subject": [
+    "charleston (w. va.)"
+   ],
+   "timestamp": "2022-04-17T01:44:54.731Z",
+   "title": "The century chronicle,",
+   "url": "https://www.loc.gov/item/09001965/"
+  },
+  {
+   "access_restricted": false,
+   "aka": [
+    "https://hdl.loc.gov/loc.gmd/g3894c.ct009533",
+    "http://www.loc.gov/resource/g3894c.ct009533/",
+    "http://www.loc.gov/item/2012589612/",
+    "http://lccn.loc.gov/2012589612"
+   ],
+   "campaigns": [],
+   "contributor": [
+    "taylor, d. f.",
+    "howell, d. j."
+   ],
+   "date": "1890",
+   "dates": [
+    "1890-01-01T00:00:00Z"
+   ],
+   "description": [
+    "Shows buildings, property lines and names of some residents. Oriented with north toward the upper left. Includes ill. of selected buildings. Available also through the Library of Congress Web site as a raster image."
+   ],
+   "digitized": true,
+   "extract_timestamp": "2021-11-12T17:10:13.083Z",
+   "group": [
+    "gmd.mar",
+    "catalog",
+    "general-maps",
+    "main-catalog"
+   ],
+   "hassegments": false,
+   "id": "http://www.loc.gov/item/2012589612/",
+   "image_url": [
+    "https://tile.loc.gov/storage-services/service/gmd/gmd389/g3894/g3894c/ct009533.gif",
+    "https://tile.loc.gov/storage-services/service/gmd/gmd389/g3894/g3894c/ct009533.gif#h=142&w=150",
+    "https://tile.loc.gov/image-services/iiif/service:gmd:gmd389:g3894:g3894c:ct009533/full/pct:12.5/0/default.jpg#h=1134&w=1200",
+    "https://tile.loc.gov/image-services/iiif/service:gmd:gmd389:g3894:g3894c:ct009533/full/pct:25/0/default.jpg#h=2268&w=2401"
+   ],
+   "index": 3,
+   "language": [
+    "english"
+   ],
+   "location": [
+    "united states",
+    "charleston",
+    "charlestown",
+    "west virginia"
+   ],
+   "mime_type": [
+    "image/gif",
+    "image/tiff",
+    "image/jpeg",
+    "image/jp2"
+   ],
+   "number": [
+    "http://www.loc.gov/item/17141194",
+    "2018-04-30t15:13:37",
+    "http://www.loc.gov/item/2012589612",
+    "2012589612"
+   ],
+   "online_format": [
+    "image"
+   ],
+   "original_format": [
+    "map"
+   ],
+   "other_title": [],
+   "partof": [
+    "american memory",
+    "cities and towns",
+    "catalog",
+    "geography and map division",
+    "cultural landscapes"
+   ],
+   "score": 1.3497701,
+   "shelf_id": "G3894.C4 1890 .T2",
+   "site": [
+    "ammem",
+    "catalog"
+   ],
+   "subject": [
+    "cadastral maps",
+    "charleston (w. va.)",
+    "united states",
+    "maps",
+    "west virginia",
+    "real property",
+    "charlestown",
+    "landowners"
+   ],
+   "timestamp": "2021-11-18T16:08:28.729Z",
+   "title": "Map of the property of the Charlestown Mining, Manufacturing and Improvement Company : Charlestown, Jefferson Co., W. VA.",
+   "url": "https://www.loc.gov/item/2012589612/"
+  },
+  {
+   "access_restricted": true,
+   "aka": [
+    "https://www.loc.gov/pictures/item/2004667123/",
+    "http://www.loc.gov/item/2004667123/",
+    "http://www.loc.gov/pictures/item/2004667123/",
+    "https://www.loc.gov/pictures/collection/coll/item/2004667123/",
+    "http://www.loc.gov/pictures/collection/coll/item/2004667123/",
+    "http://lccn.loc.gov/2004667123",
+    "http://lcweb2.loc.gov/pp/cphquery.html"
+   ],
+   "campaigns": [],
+   "date": "1921",
+   "dates": [
+    "1921-01-01T00:00:00Z"
+   ],
+   "description": [
+    "1 album (ca. 150 photographic prints) | Photographs show group portraits of officers and men; communications and other training; obsolescent U.S. Navy and other ships in use as bomb test targets; inspection; etc. Also, camp and landing field set up during coal strike (Aug. 1921) and Charleston, West Virginia."
+   ],
+   "digitized": true,
+   "extract_timestamp": "2022-08-30T02:46:14.596Z",
+   "group": [
+    "coll",
+    "catalog",
+    "groups-of-images",
+    "main-catalog"
+   ],
+   "hassegments": false,
+   "id": "http://www.loc.gov/item/2004667123/",
+   "image_url": [
+    "https://www.loc.gov/static/images/original-format/group-of-images.svg"
+   ],
+   "index": 4,
+   "language": [
+    "english"
+   ],
+   "location": [
+    "hampton",
+    "langley field",
+    "virginia",
+    "united states",
+    "west virginia",
+    "charleston"
+   ],
+   "mime_type": [
+    "image/jpg"
+   ],
+   "number": [
+    "http://www.loc.gov/item/13486316"
+   ],
+   "online_format": [
+    "image"
+   ],
+   "original_format": [
+    "photo, print, drawing"
+   ],
+   "other_title": [],
+   "partof": [
+    "prints & photographs online catalog (library of congress)",
+    "catalog",
+    "groups of images (lots)",
+    "lot 6095",
+    "prints and photographs division"
+   ],
+   "score": 1.0346885,
+   "shelf_id": "LOT 6095 (G) [P&P]",
+   "site": [
+    "pictures",
+    "catalog"
+   ],
+   "subject": [
+    "langley field (va.)",
+    "miners' strikes",
+    "hampton",
+    "air bases",
+    "photograph albums",
+    "aerial bombings",
+    "army",
+    "photographic prints",
+    "military education",
+    "west virginia",
+    "charleston (w. va.)",
+    "virginia",
+    "air service",
+    "united states",
+    "military personnel",
+    "navy",
+    "first provisional air brigade",
+    "group portraits",
+    "portrait photographs"
+   ],
+   "timestamp": "2022-08-30T02:47:19.043Z",
+   "title": "Photographic record; activities of First Provisional Air Brigade, Langley Field, Hampton, Va., 1921",
+   "type": "still image",
+   "url": "https://www.loc.gov/item/2004667123/"
+  },
+  {
+   "access_restricted": false,
+   "aka": [
+    "http://www.loc.gov/pictures/collection/nclc/item/2018678317/",
+    "https://hdl.loc.gov/loc.pnp/nclc.04438",
+    "https://hdl.loc.gov/loc.pnp/cph.3b03546",
+    "http://www.loc.gov/item/2018678317/",
+    "http://www.loc.gov/pictures/item/2018678317/",
+    "http://www.loc.gov/resource/nclc.04438/",
+    "http://www.loc.gov/resource/cph.3b03546/",
+    "http://lccn.loc.gov/2018678317"
+   ],
+   "campaigns": [],
+   "contributor": [
+    "hine, lewis wickes"
+   ],
+   "date": "1921",
+   "dates": [
+    "1921-01-01T00:00:00Z"
+   ],
+   "description": [
+    "1 photographic print."
+   ],
+   "digitized": true,
+   "extract_timestamp": "2021-09-01T22:55:04.467Z",
+   "group": [
+    "nclc",
+    "catalog",
+    "national-child-labor-committee",
+    "main-catalog"
+   ],
+   "hassegments": false,
+   "id": "http://www.loc.gov/item/2018678317/",
+   "image_url": [
+    "https://tile.loc.gov/storage-services/service/pnp/nclc/04400/04438_150px.jpg#h=103&w=150",
+    "https://tile.loc.gov/storage-services/service/pnp/nclc/04400/04438t.gif#h=103&w=150",
+    "https://tile.loc.gov/storage-services/service/pnp/nclc/04400/04438r.jpg#h=441&w=640",
+    "https://tile.loc.gov/storage-services/service/pnp/nclc/04400/04438v.jpg#h=705&w=1024"
+   ],
+   "index": 5,
+   "language": [
+    "english"
+   ],
+   "location": [
+    "united states",
+    "charleston",
+    "west virginia"
+   ],
+   "mime_type": [
+    "image/gif",
+    "image/jpg",
+    "image/tif"
+   ],
+   "number": [
+    "http://www.loc.gov/item/ncl2004004709/pp",
+    "http://www.loc.gov/item/20689249"
+   ],
+   "online_format": [
+    "image"
+   ],
+   "original_format": [
+    "photo, print, drawing"
+   ],
+   "other_title": [],
+   "partof": [
+    "lot 7482",
+    "catalog",
+    "national child labor committee collection",
+    "prints and photographs division"
+   ],
+   "score": 1.0241301,
+   "shelf_id": "LOT 7482, no. 5119 [P&P]",
+   "site": [
+    "pictures",
+    "catalog"
+   ],
+   "subject": [
+    "photographic prints",
+    "charleston",
+    "united states",
+    "boys",
+    "poverty",
+    "swine",
+    "west virginia",
+    "4-h clubs",
+    "african americans"
+   ],
+   "timestamp": "2021-09-04T13:41:33.121Z",
+   "title": "George Cox, 13 yr. old colored boy, has just joined the 4 H Club and is raising a pig. His father is a \"renter\" in this poor home near the W. Va. Collegiate Institute (near Charleston) the state colored agricultural college. Mr. A.W. Curtis, Agri. Agent, is helping George.  Location: Charleston [vicinity], West Virginia",
+   "url": "https://www.loc.gov/item/2018678317/"
+  },
+  {
+   "access_restricted": false,
+   "aka": [
+    "http://www.loc.gov/pictures/collection/nclc/item/2018678736/",
+    "https://hdl.loc.gov/loc.pnp/nclc.04439",
+    "http://www.loc.gov/item/2018678736/",
+    "http://www.loc.gov/pictures/item/2018678736/",
+    "http://www.loc.gov/resource/nclc.04439/",
+    "http://lccn.loc.gov/2018678736"
+   ],
+   "campaigns": [],
+   "contributor": [
+    "hine, lewis wickes"
+   ],
+   "date": "1921",
+   "dates": [
+    "1921-01-01T00:00:00Z"
+   ],
+   "description": [
+    "1 photographic print."
+   ],
+   "digitized": true,
+   "extract_timestamp": "2021-09-01T22:55:06.740Z",
+   "group": [
+    "nclc",
+    "catalog",
+    "national-child-labor-committee",
+    "main-catalog"
+   ],
+   "hassegments": false,
+   "id": "http://www.loc.gov/item/2018678736/",
+   "image_url": [
+    "https://tile.loc.gov/storage-services/service/pnp/nclc/04400/04439_150px.jpg#h=109&w=150",
+    "https://tile.loc.gov/storage-services/service/pnp/nclc/04400/04439t.gif#h=109&w=150",
+    "https://tile.loc.gov/storage-services/service/pnp/nclc/04400/04439r.jpg#h=464&w=640",
+    "https://tile.loc.gov/storage-services/service/pnp/nclc/04400/04439v.jpg#h=742&w=1024"
+   ],
+   "index": 6,
+   "language": [
+    "english"
+   ],
+   "location": [
+    "united states",
+    "charleston",
+    "west virginia"
+   ],
+   "mime_type": [
+    "image/gif",
+    "image/jpg",
+    "image/tif"
+   ],
+   "number": [
+    "http://www.loc.gov/item/20689714",
+    "http://www.loc.gov/item/ncl2004005129/pp"
+   ],
+   "online_format": [
+    "image"
+   ],
+   "original_format": [
+    "photo, print, drawing"
+   ],
+   "other_title": [],
+   "partof": [
+    "lot 7482",
+    "catalog",
+    "national child labor committee collection",
+    "prints and photographs division"
+   ],
+   "score": 1.0241301,
+   "shelf_id": "LOT 7482, no. 5120 [P&P]",
+   "site": [
+    "pictures",
+    "catalog"
+   ],
+   "subject": [
+    "families",
+    "photographic prints",
+    "charleston",
+    "united states",
+    "poverty",
+    "swine",
+    "west virginia",
+    "4-h clubs",
+    "african americans"
+   ],
+   "timestamp": "2021-09-04T13:42:50.891Z",
+   "title": "George Cox, 13 year old colored boy, has just joined the 4 H Club and is raising a pig. His father is a \"renter\" in this poor home near the W. Va. Collegiate Institute (Near Charleston) the State colored agricultural college. Mr. A.W. Curtis, Agri. Agent, is helping George.  Location: Charleston [vicinity], West Virginia",
+   "url": "https://www.loc.gov/item/2018678736/"
+  }
+ ],
+ "resources": [],
+ "timestamp": 1665704407735
+}
