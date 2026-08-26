@@ -3,6 +3,7 @@ import {
   bibtex,
   chicagoBibliography,
   chicagoFootnote,
+  chicagoShortNote,
   toCsv,
 } from "@/lib/cite/cite";
 import { DEMO_RECORDS } from "@/lib/demo/records";
@@ -17,6 +18,42 @@ describe("citations", () => {
     expect(note).toContain("“Reply to Secretary of War Simon Cameron”");
     expect(note).toContain("1861");
     expect(note).toMatch(/accessed/);
+  });
+
+  it("short note uses the surname for personal creators", () => {
+    const lincoln: SourceRecord = {
+      ...magoffin,
+      citation: {
+        ...magoffin.citation,
+        creator: "Abraham Lincoln",
+        title: "Letter to Horace Greeley",
+      },
+    };
+    expect(chicagoShortNote(lincoln)).toBe("Lincoln, “Letter to Horace Greeley”.");
+    // Middle initials: surname is still the last token.
+    const mcclellan: SourceRecord = {
+      ...magoffin,
+      citation: {
+        ...magoffin.citation,
+        creator: "George B. McClellan",
+        title: "Report",
+      },
+    };
+    expect(chicagoShortNote(mcclellan)).toMatch(/^McClellan, /);
+  });
+
+  it("short note keeps corporate creators whole", () => {
+    const convention: SourceRecord = {
+      ...magoffin,
+      citation: {
+        ...magoffin.citation,
+        creator: "South Carolina Secession Convention",
+        title: "Declaration",
+      },
+    };
+    expect(chicagoShortNote(convention)).toBe(
+      "South Carolina Secession Convention, “Declaration”.",
+    );
   });
 
   it("omits missing fields instead of inventing them", () => {

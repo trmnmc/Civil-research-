@@ -79,6 +79,39 @@ describe("primary-source classification", () => {
     expect(c.evidenceClass).toBe("secondary");
   });
 
+  it("does not read wartime 'veteran' vocabulary as retrospective", () => {
+    const c = classifySource({
+      format: "letter",
+      title: "Letter on the veteran volunteers' re-enlistment",
+      dates: { created: "1864-01-05", sortYear: 1864 },
+      scanAvailable: false,
+      provider: "loc",
+    });
+    expect(c.evidenceClass).toBe("contemporaneous");
+  });
+
+  it("treats a period anniversary address as public argument, not secondary", () => {
+    const c = classifySource({
+      format: "speech",
+      title: "Anniversary address before the American Anti-Slavery Society",
+      dates: { created: "1859", sortYear: 1859 },
+      scanAvailable: false,
+      provider: "loc",
+    });
+    expect(c.evidenceClass).toBe("public-argument");
+  });
+
+  it("still marks undated commemorative material as secondary", () => {
+    const c = classifySource({
+      format: "book",
+      title: "Centennial commemoration of the battle",
+      dates: {},
+      scanAvailable: false,
+      provider: "loc",
+    });
+    expect(c.evidenceClass).toBe("secondary");
+  });
+
   it("drops confidence when a date is missing", () => {
     const c = classifySource({
       format: "letter",

@@ -26,6 +26,12 @@ export async function GET(
   if (!Number.isFinite(projectId)) {
     return NextResponse.json({ error: "Bad project id" }, { status: 400 });
   }
+  if (!["bibliography", "packet", "bibtex", "csv"].includes(format)) {
+    return NextResponse.json(
+      { error: `Unknown export format "${format}". Use bibliography, packet, bibtex, or csv.` },
+      { status: 400 },
+    );
+  }
   const db = getDb();
   const project = db
     .select()

@@ -189,7 +189,8 @@ export const PLACE_ALIASES: PlaceAlias[] = [
     canonical: "Harpers Ferry",
     aliases: ["Harper's Ferry"],
     state: "WV",
-    reason: "Both possessive and plain forms appear throughout the period.",
+    reason:
+      "Both possessive and plain forms appear throughout the period. In Virginia until West Virginia statehood (June 1863); tagged WV per modern geography.",
   },
   {
     canonical: "Perryville",
@@ -342,7 +343,7 @@ export const TERM_EXPANSIONS: TermExpansion[] = [
   {
     term: "confederate",
     expandedTo: ["rebel", "secesh", "southern confederacy"],
-    reason: "Union sources wrote “rebel” or slang “secesh”; formal name “Southern Confederacy”.",
+    reason: "Union sources wrote “rebel” or slang “secesh”; “Southern Confederacy” was common period usage (the formal name was the Confederate States of America).",
   },
   {
     term: "union army",
@@ -436,11 +437,11 @@ const ORDINAL_NAMES = Object.fromEntries(
 export function parseUnits(text: string): UnitReference[] {
   const units: UnitReference[] = [];
   const pattern =
-    /\b(\d{1,3})(?:st|nd|rd|th)?\s+([A-Z][a-zA-Z.]+(?:\s[A-Z][a-zA-Z.]+)?)\s*(infantry|cavalry|artillery|inf\.?|cav\.?|arty\.?|volunteers|vols\.?|regiment|USCT)?/g;
+    /\b(\d{1,3})(?:st|nd|rd|th)?\s+([A-Z][a-zA-Z.]+(?:\s[A-Z][a-zA-Z.]+)?)((?:\s+\(?[cC]olored\)?)?)\s*(infantry|cavalry|artillery|inf\.?|cav\.?|arty\.?|volunteers|vols\.?|regiment|USCT)?/g;
   for (const m of text.matchAll(pattern)) {
     const ordinal = parseInt(m[1], 10);
     let stateWord = m[2].replace(/\.$/, "");
-    let branchWord = (m[3] || "").toLowerCase().replace(/\.$/, "");
+    let branchWord = (m[4] || "").toLowerCase().replace(/\.$/, "");
     // The state capture can swallow a capitalized branch word
     // ("Kentucky Infantry") — split it back out.
     const stateTokens = stateWord.split(/\s+/);
@@ -456,10 +457,13 @@ export function parseUnits(text: string): UnitReference[] {
       ({ va: "VA", ky: "KY", pa: "PA", mass: "MA", tenn: "TN", miss: "MS", ala: "AL" } as Record<string, string>)[
         stateWord.toLowerCase()
       ];
-    const usct = /usct/i.test(m[0]) || /colored/i.test(text);
-    if (!state && !usct) continue;
+    // "Colored"/USCT flags apply only to THIS match, never the whole query
+    // (the 54th Massachusetts and the 54th USCT are different regiments).
+    const usctExplicit = /usct/i.test(m[0]);
+    const coloredDesignation = /colored/i.test(m[0]);
+    if (!state && !usctExplicit) continue;
     const branch = BRANCH_WORDS[branchWord] ?? undefined;
-    units.push(buildUnit(m[0], ordinal, state, branch, usct));
+    units.push(buildUnit(m[0], ordinal, state, branch, usctExplicit, coloredDesignation));
   }
   // Written-out ordinals: "Fifth Ohio"
   const wordPattern = new RegExp(
@@ -470,7 +474,7 @@ export function parseUnits(text: string): UnitReference[] {
     const ordinal = ORDINAL_WORDS[m[1].toLowerCase()];
     const state = stateByName(m[2])?.code;
     if (!state || !ordinal) continue;
-    units.push(buildUnit(m[0], ordinal, state, undefined, false));
+    units.push(buildUnit(m[0], ordinal, state, undefined, false, false));
   }
   return units;
 }
@@ -480,14 +484,19 @@ function buildUnit(
   ordinal: number,
   state: string | undefined,
   branch: "infantry" | "cavalry" | "artillery" | undefined,
-  usct: boolean,
+  usctExplicit: boolean,
+  coloredDesignation: boolean,
 ): UnitReference {
   const stateName = state ? stateByCode(state)?.name : undefined;
   const ord = `${ordinal}${ordinalSuffix(ordinal)}`;
   const ordWord = ORDINAL_NAMES[ordinal];
   const variants = new Set<string>();
   const branchNames = branch ? [branch] : ["infantry", "cavalry"];
-  const base = usct ? "United States Colored Troops" : stateName;
+  // A state name always keeps state-based variants; "…United States Colored
+  // Troops" variants are generated ONLY for explicit stateless USCT
+  // references — a state regiment with a "(Colored)" designation is a
+  // different unit from the same-numbered USCT regiment.
+  const base = stateName ?? (usctExplicit ? "United States Colored Troops" : undefined);
   if (base) {
     for (const b of branchNames) {
       variants.add(`${ord} ${base} ${b[0].toUpperCase()}${b.slice(1)}`);
@@ -499,8 +508,21 @@ function buildUnit(
         `${ordWord[0].toUpperCase()}${ordWord.slice(1)} ${base}`,
       );
     variants.add(`${ord} Regiment, ${base}${branch ? ` ${branch[0].toUpperCase()}${branch.slice(1)}` : ""}`);
+    if (stateName && coloredDesignation) {
+      variants.add(`${ord} ${stateName} (Colored)`);
+      variants.add(
+        `${ord} ${stateName} Volunteer Infantry (Colored)`,
+      );
+    }
   }
-  return { raw, ordinal, state, branch, usct, variants: [...variants] };
+  return {
+    raw,
+    ordinal,
+    state,
+    branch,
+    usct: usctExplicit || coloredDesignation,
+    variants: [...variants],
+  };
 }
 
 // ─── Source format vocabulary ────────────────────────────────────────────────

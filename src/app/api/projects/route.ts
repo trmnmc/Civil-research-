@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { desc, eq, sql } from "drizzle-orm";
+import { count, desc, eq } from "drizzle-orm";
 import { CreateProjectSchema } from "@/lib/api/schemas";
 import { getDb } from "@/lib/db/client";
 import { projects, savedSources } from "@/lib/db/schema";
@@ -14,9 +14,11 @@ export async function GET() {
       name: projects.name,
       description: projects.description,
       createdAt: projects.createdAt,
-      sourceCount: sql<number>`(select count(*) from ${savedSources} where ${savedSources.projectId} = ${projects.id})`,
+      sourceCount: count(savedSources.id),
     })
     .from(projects)
+    .leftJoin(savedSources, eq(savedSources.projectId, projects.id))
+    .groupBy(projects.id)
     .orderBy(desc(projects.createdAt))
     .all();
   return NextResponse.json({ projects: rows });

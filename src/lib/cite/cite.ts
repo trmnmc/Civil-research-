@@ -28,13 +28,23 @@ export function chicagoFootnote(record: SourceRecord): string {
   return parts.join(", ") + ".";
 }
 
-/** Chicago/Turabian shortened footnote. */
+/**
+ * Chicago/Turabian shortened footnote. Personal names contribute the
+ * surname; corporate creators keep their full name (Chicago 14.32/14.84).
+ */
 export function chicagoShortNote(record: SourceRecord): string {
   const c = record.citation;
-  const surname = c.creator?.split(/[, ]/)[0];
+  let shortCreator: string | undefined;
+  if (c.creator) {
+    const base = c.creator.replace(/\s*\(.*$/, "").trim();
+    const personal = base.match(
+      /^([A-Z][\w.'-]+(?:\s[A-Z]\.?)*)\s+([A-Z][\w'-]+)$/,
+    );
+    shortCreator = personal ? personal[2] : base;
+  }
   const shortTitle =
     c.title.length > 60 ? `${c.title.slice(0, 57).trimEnd()}…` : c.title;
-  return [surname, `“${shortTitle}”`].filter(Boolean).join(", ") + ".";
+  return [shortCreator, `“${shortTitle}”`].filter(Boolean).join(", ") + ".";
 }
 
 /** Chicago/Turabian bibliography entry. */

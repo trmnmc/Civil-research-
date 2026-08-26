@@ -75,20 +75,23 @@ export function extractDates(query: string): {
 
 /** Capitalized-word runs that are not state names → probable person names. */
 function findProbableNames(query: string, excluded: Set<string>): string[] {
-  const names: string[] = [];
+  const names = new Set<string>();
+  // Mc/M'-form surnames (internal capitals) are names wherever they appear —
+  // these are exactly the names the M'/Mc variant expansion exists for.
+  for (const m of query.matchAll(/\b(?:Mc|M['‘])[A-Z][a-zA-Z]+\b/g)) {
+    names.add(m[0]);
+  }
+  // Multi-word capitalized runs (allowing internal capitals: "George B.
+  // McClellan"), excluding state names and known vocabulary.
   for (const m of query.matchAll(
-    /\b([A-Z][a-z']+(?:\s+[A-Z]\.?)?(?:\s+[A-Z][a-z']+)?)\b/g,
+    /\b([A-Z][a-zA-Z']+(?:\s+[A-Z]\.?)?(?:\s+[A-Z][a-zA-Z']+)?)\b/g,
   )) {
     const candidate = m[1].trim();
     if (candidate.length < 3) continue;
     if (excluded.has(candidate.toLowerCase())) continue;
-    // Single common words at sentence start aren't names.
-    if (!candidate.includes(" ") && m.index === 0) continue;
-    if (/^(Mc|M')[A-Z]/.test(candidate) || candidate.includes(" ")) {
-      names.push(candidate);
-    }
+    if (candidate.includes(" ")) names.add(candidate);
   }
-  return [...new Set(names)];
+  return [...names];
 }
 
 export function interpretQuery(query: string): QueryInterpretation {

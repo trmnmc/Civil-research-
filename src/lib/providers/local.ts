@@ -16,10 +16,17 @@ export function localSearch(
   const states = interpretation.states;
 
   return records.filter((r) => {
-    // Year overlap (records without a year are kept — honesty over hiding).
-    const y = r.dates.sortYear;
+    // Year overlap on creation OR event date (a retrospective account about
+    // an in-window event stays findable, correctly labeled as retrospective).
+    // Records without any year are kept — honesty over hiding.
+    const years: number[] = [];
+    if (r.dates.sortYear !== undefined) years.push(r.dates.sortYear);
+    for (const m of (r.dates.eventDate ?? "").matchAll(/\b(1[6-9]\d{2})\b/g)) {
+      years.push(parseInt(m[1], 10));
+    }
     const yearOk =
-      y === undefined || (y >= yearRange[0] - 3 && y <= yearRange[1] + 3);
+      years.length === 0 ||
+      years.some((y) => y >= yearRange[0] - 3 && y <= yearRange[1] + 3);
     if (!yearOk) return false;
     if (terms.length === 0 && states.length === 0) return true;
 

@@ -70,9 +70,10 @@ export async function runSearch(
     if (outcome.status === "fulfilled") {
       statuses.push(outcome.value.status);
       for (const rec of outcome.value.records) {
-        // Dedupe across providers by full URL (hash stripped): the same
-        // archive item reached through two adapters keeps one entry.
-        const key = rec.url.replace(/#.*$/, "");
+        // Dedupe the same archive item reached twice. Distinct records may
+        // legitimately share a URL (collection-level entries link to the
+        // archive root), so the key includes the provider item id.
+        const key = `${rec.url.replace(/#.*$/, "")}::${rec.providerItemId}`;
         if (seenUrls.has(key)) continue;
         seenUrls.add(key);
         merged.push(rec);

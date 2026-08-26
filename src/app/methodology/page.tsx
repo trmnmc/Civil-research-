@@ -36,8 +36,9 @@ export default function MethodologyPage() {
           that produced them. It never assigns loyalty from location: a
           Kentucky letter may be Unionist, secessionist, or torn; a Northern
           editorial may despise abolition. Political alignment is used only
-          when documented, and the voices of enslaved people are never
-          represented by the institutions that held them.
+          when documented, and institutional records <em>about</em> enslaved
+          people are marked &ldquo;about, not by&rdquo; — never boosted as
+          the voice of the people they describe.
         </p>
       </section>
       <section className="space-y-2">

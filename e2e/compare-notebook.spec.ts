@@ -141,7 +141,7 @@ test("source workspace: transcript beside scan info, analysis, citations", async
 
   // Transcript renders the verbatim excerpt with its source note.
   await expect(
-    page.getByText("I will send not a man nor a dollar"),
+    page.getByText("Kentucky will furnish no troops"),
   ).toBeVisible();
   await expect(page.getByText(/Text source:/)).toBeVisible();
 

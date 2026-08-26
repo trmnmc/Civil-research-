@@ -53,9 +53,11 @@ the date before using the item as time-bound evidence.
 The Perspective Lens weights sources by the **place and community that
 produced them** — never by an assumed loyalty. Its bands are wartime
 political geography: free states that stayed in the Union; slave states
-that did not secede plus deeply divided areas (Kentucky, Missouri,
-Maryland, Delaware, West Virginia, East Tennessee); seceded states; and a
-national/D.C. layer.
+that did not secede (Kentucky, Missouri, Maryland, Delaware) plus West
+Virginia; seceded states; and a national/D.C. layer. East Tennessee's
+heavily Unionist communities are flagged in per-record notes, but
+Tennessee remains in the seceded band — sub-state divisions are documented
+per record, not modeled as separate bands.
 
 Rules the code enforces:
 

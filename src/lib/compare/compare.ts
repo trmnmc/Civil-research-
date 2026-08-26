@@ -45,14 +45,17 @@ function topicsOf(records: SourceRecord[]): Map<string, SourceRecord[]> {
 }
 
 function vocabOf(records: SourceRecord[]): Map<string, SourceRecord[]> {
+  // Word-choice evidence comes ONLY from the documents' own text; curated
+  // descriptions are modern prose and never count as period vocabulary.
   const words = [
     "rebel", "rebellion", "secesh", "federal", "yankee", "confederate",
     "disunion", "contraband", "abolition", "neutrality", "invasion",
-    "liberty", "property", "institution",
+    "liberty", "property", "institution", "slavery", "subduing",
   ];
   const map = new Map<string, SourceRecord[]>();
   for (const r of records) {
-    const text = recordText(r);
+    const text = (r.transcript.text ?? "").toLowerCase();
+    if (!text) continue;
     for (const w of words) {
       if (text.includes(w)) map.set(w, [...(map.get(w) ?? []), r]);
     }
@@ -97,23 +100,39 @@ export function comparePerspectives(
     if (rRecs) {
       statements.push({
         kind: "shared-fact",
-        text: `Both sides address ${topic}. The event or issue is common ground; how each side frames it is what differs.`,
+        text: `Both sets address ${topic}. Compare what each asserts, defends, or testifies to — their differences are evidence about the period\u2019s conflict, not equally supported accounts of it.`,
         leftEvidence: lRecs.slice(0, 4).map((r) => r.id),
         rightEvidence: rRecs.slice(0, 4).map((r) => r.id),
       });
     }
   }
 
-  // ── Information available: creation-date spans ──
+  // ── Information available: creation-date spans. Claimed only when one
+  //    side's earliest date clearly postdates the other's latest (≈3+
+  //    months), so trivially different spans don't generate a claim. ──
   const lSpan = dateSpan(left);
   const rSpan = dateSpan(right);
-  if (lSpan && rSpan && (lSpan[0] !== rSpan[0] || lSpan[1] !== rSpan[1])) {
-    statements.push({
-      kind: "information-differs",
-      text: `The two sides were written at different moments (left: ${lSpan[0]}${lSpan[1] !== lSpan[0] ? ` to ${lSpan[1]}` : ""}; right: ${rSpan[0]}${rSpan[1] !== rSpan[0] ? ` to ${rSpan[1]}` : ""}). Authors writing later knew outcomes the earlier authors could not.`,
-      leftEvidence: left.slice(0, 4).map((r) => r.id),
-      rightEvidence: right.slice(0, 4).map((r) => r.id),
-    });
+  const monthsOf = (d: string) => {
+    const m = d.match(/^(\d{4})(?:-(\d{2}))?/);
+    return m ? parseInt(m[1], 10) * 12 + (m[2] ? parseInt(m[2], 10) - 1 : 6) : undefined;
+  };
+  if (lSpan && rSpan) {
+    const lStart = monthsOf(lSpan[0]);
+    const lEnd = monthsOf(lSpan[1]);
+    const rStart = monthsOf(rSpan[0]);
+    const rEnd = monthsOf(rSpan[1]);
+    const gapMonths =
+      lStart !== undefined && lEnd !== undefined && rStart !== undefined && rEnd !== undefined
+        ? Math.max(lStart - rEnd, rStart - lEnd)
+        : 0;
+    if (gapMonths >= 3) {
+      statements.push({
+        kind: "information-differs",
+        text: `The two sides were written at clearly different moments (left: ${lSpan[0]}${lSpan[1] !== lSpan[0] ? ` to ${lSpan[1]}` : ""}; right: ${rSpan[0]}${rSpan[1] !== rSpan[0] ? ` to ${rSpan[1]}` : ""}). Authors writing later could have known of events the earlier authors could not.`,
+        leftEvidence: left.slice(0, 4).map((r) => r.id),
+        rightEvidence: right.slice(0, 4).map((r) => r.id),
+      });
+    }
   }
 
   // ── Evidence-class differences: how each side's documents were made ──
@@ -138,7 +157,7 @@ export function comparePerspectives(
   if (lWords.length > 0 || rWords.length > 0) {
     statements.push({
       kind: "language-differs",
-      text: `Vocabulary diverges${lWords.length ? `: the left sources use ${lWords.slice(0, 3).join(", ")}` : ""}${rWords.length ? `${lWords.length ? "; " : ": "}the right sources use ${rWords.slice(0, 3).join(", ")}` : ""}. Word choice marks political framing in this period.`,
+      text: `Vocabulary in the documents\u2019 own text diverges${lWords.length ? `: the left documents use ${lWords.slice(0, 3).join(", ")}` : ""}${rWords.length ? `${lWords.length ? "; " : ": "}the right documents use ${rWords.slice(0, 3).join(", ")}` : ""}. Word choice marks political framing in this period.`,
       leftEvidence: [
         ...new Set(lWords.flatMap((w) => (lVocab.get(w) ?? []).map((r) => r.id))),
       ].slice(0, 4),
@@ -148,17 +167,26 @@ export function comparePerspectives(
     });
   }
 
-  // ── Documented alignment conflicts ──
+  // ── Documented alignment conflicts. Merely DIFFERENT positions are not
+  //    opposition (abolitionists were mostly Unionists); only documented
+  //    opposed pairs produce a conflict statement. ──
+  const OPPOSED: [string, string][] = [
+    ["confederate-aligned", "unionist"],
+    ["confederate-aligned", "abolitionist"],
+    ["confederate-aligned", "southern-unionist"],
+    ["antiwar-northern-democrat", "abolitionist"],
+  ];
   const lAligns = new Set(
     left.map((r) => r.perspective.alignment).filter((a) => a !== "unknown"),
   );
   const rAligns = new Set(
     right.map((r) => r.perspective.alignment).filter((a) => a !== "unknown"),
   );
-  const conflicting =
-    lAligns.size > 0 &&
-    rAligns.size > 0 &&
-    ![...lAligns].some((a) => rAligns.has(a));
+  const conflicting = OPPOSED.some(
+    ([a, b]) =>
+      (lAligns.has(a as never) && rAligns.has(b as never)) ||
+      (lAligns.has(b as never) && rAligns.has(a as never)),
+  );
   if (conflicting) {
     statements.push({
       kind: "conflict",

@@ -170,7 +170,7 @@ const PAPERS: PaperDef[] = [
     lastIssue: "1849-12-08",
     alignment: "abolitionist",
     alignmentNote:
-      "An emancipationist paper published in a slave state before the war — evidence that antislavery argument existed inside Kentucky.",
+      "An emancipationist paper published in a slave state before the war — evidence that antislavery argument existed inside Kentucky. Tagged abolitionist as the nearest available category; Kentucky\u2019s gradual-emancipation movement pointedly distinguished itself from abolitionism.",
     csvLine: "chronam.csv (Kentucky section)",
   },
   {
@@ -224,7 +224,7 @@ const PAPERS: PaperDef[] = [
     lastIssue: "1864-12-29",
     alignment: "unionist",
     alignmentNote:
-      "Conservative Unionist paper — loyal to the Union while frequently critical of emancipation policy. Evidence that Northern loyalty did not imply support for abolition.",
+      "Conservative Unionist paper — loyal to the Union while frequently critical of emancipation policy. Evidence that Union loyalty did not imply support for abolition.",
     csvLine: "chronam.csv (District of Columbia section)",
   },
   {
@@ -250,7 +250,7 @@ const PAPERS: PaperDef[] = [
     firstIssue: "1870-09-08",
     alignment: "abolitionist",
     alignmentNote:
-      "Weekly edited by Frederick Douglass during Reconstruction — a leading Black-owned national paper.",
+      "Weekly edited by Frederick Douglass during Reconstruction — a leading Black-owned national paper. Tagged abolitionist as the nearest available category for its antislavery lineage; by 1870 its cause was Reconstruction-era civil rights.",
     social: ["free-black-resident", "newspaper-editor"],
     csvLine: "chronam.csv (District of Columbia section)",
   },
@@ -305,7 +305,7 @@ const PAPERS: PaperDef[] = [
     lastIssue: "1861-05-04",
     alignment: "abolitionist",
     alignmentNote:
-      "Garrisonian abolitionist weekly, as its title declares; its digitized run ends in May 1861, weeks into the war.",
+      "Garrisonian abolitionist weekly, as its title declares; published first at New-Lisbon and from late 1845 at Salem, Ohio. Its digitized run ends in May 1861, weeks into the war.",
     csvLine: "chronam.csv (Ohio section)",
   },
   {
@@ -384,15 +384,15 @@ function paperTitleRecord(p: PaperDef): SourceRecord {
   const url = `https://www.loc.gov/item/${p.lccn}/`;
   const firstYear = parseInt(p.firstIssue.slice(0, 4), 10);
   const sortYear = Math.max(firstYear, 1850);
-  const classification = classifySource({
-    format: "newspaper",
-    formatLabel: "newspaper title",
-    title: p.displayTitle,
-    description: `Newspaper published at ${p.place.replace(/\.+$/, "")}, ${p.run}.`,
-    dates: { created: p.run, sortYear, display: p.run },
-    scanAvailable: true,
-    provider: "demo",
-  });
+  // A title-level entry locates a digitized run; it is a pointer to period
+  // issues, not itself a document — classify it as an index entry.
+  const classification = {
+    evidenceClass: "index-or-finding-aid" as const,
+    confidence: "high" as const,
+    explanation:
+      "A digitized-run entry for a newspaper title: it locates period issues but is not itself a document. Open an issue to reach contemporaneous evidence.",
+    signals: ["title-level catalog entry", `digitized run ${p.run}`],
+  };
   return {
     id: `demo:lccn-${p.lccn}`,
     provider: "demo",
@@ -592,7 +592,7 @@ const DOCUMENTS: SourceRecord[] = [
       isOcr: false,
       isExcerpt: true,
       sourceNote:
-        "Verbatim excerpts from the standard published text of the Emancipation Proclamation (National Archives transcription, RG 11). Ellipses mark omitted passages; nothing is paraphrased.",
+        "Verbatim excerpts from the standard published text of the Emancipation Proclamation (National Archives transcription, RG 11). Ellipses mark omitted passages; nothing is paraphrased. Note: the ‘forever free’ sentence appears in the January 1 text as its quotation of the September 22 preliminary order; the January 1 operative words are ‘are, and henceforward shall be free.’",
     },
     scanAvailable: true,
     rights: {
@@ -656,7 +656,7 @@ const DOCUMENTS: SourceRecord[] = [
       isOcr: false,
       isExcerpt: true,
       sourceNote:
-        "Verbatim from the operative sentence of the September 22, 1862 preliminary proclamation as published (and later quoted in the January 1 proclamation). Ellipsis marks the continuing sentence.",
+        "Wording verbatim from the operative sentence of the September 22, 1862 preliminary proclamation as published (and later quoted in the January 1 proclamation); comma placement varies among transcriptions. Ellipsis marks the continuing sentence.",
     },
     scanAvailable: true,
     rights: {
@@ -809,7 +809,7 @@ const DOCUMENTS: SourceRecord[] = [
       socialPositions: ["political-actor"],
       alignment: "confederate-aligned",
       basis: "curated",
-      note: "The convention speaks for the secessionist government, not for every South Carolinian — enslaved people, who were roughly half the state's population, had no voice in it.",
+      note: "The convention speaks for the secessionist government, not for every South Carolinian — enslaved people — a majority of the state's population, about 57 percent in the 1860 census — had no voice in it.",
     },
     raw: {},
     provenance:
@@ -824,7 +824,7 @@ const DOCUMENTS: SourceRecord[] = [
       "A Declaration of the Immediate Causes which Induce and Justify the Secession of the State of Mississippi",
     creator: "Mississippi Secession Convention",
     dates: {
-      created: "1861-01-09",
+      created: "1861-01",
       sortYear: 1861,
       display: "January 1861",
     },
@@ -882,7 +882,7 @@ const DOCUMENTS: SourceRecord[] = [
     id: "demo:magoffin-reply-1861",
     provider: "demo",
     providerItemId: "magoffin-reply-1861",
-    url: "https://www.loc.gov/collections/chronicling-america/?qs=magoffin+wicked+purpose&start_date=1861-04-15&end_date=1861-06-30",
+    url: "https://www.loc.gov/collections/chronicling-america/?qs=magoffin+furnish+no+troops&start_date=1861-04-15&end_date=1861-06-30",
     title:
       "Governor Beriah Magoffin's reply to the federal call for troops",
     creator: "Beriah Magoffin, Governor of Kentucky",
@@ -898,15 +898,15 @@ const DOCUMENTS: SourceRecord[] = [
     formatLabel: "Official telegram",
     subjects: ["Kentucky", "Neutrality", "Secession crisis", "Call for troops"],
     description:
-      "Kentucky's governor refuses Lincoln's April 1861 call for troops. Widely reprinted, the telegram marks the opening of Kentucky's armed-neutrality period: a slave state refusing to fight the Confederacy while also declining to secede.",
+      "Kentucky's governor refuses Lincoln's April 1861 call for troops, replying that Kentucky would furnish none for what he called the wicked purpose of subduing the seceded states. Widely reprinted, the reply marks the opening of Kentucky's armed-neutrality period: a slave state refusing to fight the Confederacy while also declining to secede.",
     transcript: {
       available: true,
       text:
-        "I will send not a man nor a dollar for the wicked purpose of subduing my sister Southern States.",
+        "Your dispatch is received. In answer I say emphatically Kentucky will furnish no troops for the wicked purpose of subduing her sister Southern States.",
       isOcr: false,
       isExcerpt: true,
       sourceNote:
-        "Verbatim from Magoffin's telegram of April 15, 1861, as printed in the Official Records of the War of the Rebellion (Series III, Volume 1) and reprinted across the period press.",
+        "Verbatim from Magoffin's April 15, 1861 reply to Secretary Cameron as printed in the Official Records of the War of the Rebellion (Series III, Volume 1). A popular variant (“not a man nor a dollar…”) circulates unsourced and is deliberately not used here.",
     },
     scanAvailable: false,
     rights: {
@@ -920,7 +920,7 @@ const DOCUMENTS: SourceRecord[] = [
       collection:
         "Official Records of the War of the Rebellion, Series III, Volume 1",
       archiveName: "U.S. War Department (published compilation)",
-      url: "https://www.loc.gov/collections/chronicling-america/?qs=magoffin+wicked+purpose&start_date=1861-04-15&end_date=1861-06-30",
+      url: "https://www.loc.gov/collections/chronicling-america/?qs=magoffin+furnish+no+troops&start_date=1861-04-15&end_date=1861-06-30",
       accessed: ACCESSED,
     },
     classification: {
@@ -1133,6 +1133,129 @@ const DOCUMENTS: SourceRecord[] = [
     provenance:
       "Author, title, publication year, and quoted sentence are established public record (1861 first edition). DocSouth URL is the standard cited address for this electronic edition; validate with scripts/validate-links.ts.",
   },
+  {
+    id: "demo:jacobs-rebel-invasion-1864",
+    provider: "demo",
+    providerItemId: "jacobs-rebel-invasion-1864",
+    url: "https://www.loc.gov/search/?q=jacobs+notes+rebel+invasion+gettysburg",
+    title:
+      "Notes on the Rebel Invasion of Maryland and Pennsylvania and the Battle of Gettysburg",
+    creator: "Michael Jacobs (professor at Pennsylvania College, Gettysburg)",
+    dates: {
+      created: "1864",
+      eventDate: "1863-06-15 – 1863-07-04",
+      sortYear: 1864,
+      display: "Published 1864, describing June–July 1863",
+    },
+    place: "Gettysburg, Pa. (events); Philadelphia (published)",
+    state: "PA",
+    format: "book",
+    formatLabel: "Civilian eyewitness account (published 1864)",
+    subjects: ["Gettysburg", "Civilians", "Pennsylvania", "Gettysburg campaign"],
+    description:
+      "An account of the Confederate invasion and the battle by a Gettysburg civilian — a Pennsylvania College professor who observed the fighting from the town — published by J. B. Lippincott in 1864, within a year of the events. One of the earliest civilian narratives of the battle. No excerpt is bundled here; the entry links to the Library of Congress catalog for the title.",
+    transcript: {
+      available: false,
+      isOcr: false,
+      sourceNote:
+        "No text is bundled: this reference entry deliberately carries no quotation rather than an unverified one. The 1864 edition is widely held; see the archive link.",
+    },
+    scanAvailable: false,
+    rights: {
+      statement: "Published 1864; in the public domain.",
+      allowsRedistribution: true,
+    },
+    citation: {
+      creator: "Michael Jacobs",
+      title:
+        "Notes on the Rebel Invasion of Maryland and Pennsylvania and the Battle of Gettysburg",
+      date: "1864",
+      archiveName: "Library of Congress (catalog search)",
+      url: "https://www.loc.gov/search/?q=jacobs+notes+rebel+invasion+gettysburg",
+      locator: "Philadelphia: J. B. Lippincott, 1864",
+      accessed: ACCESSED,
+    },
+    classification: {
+      evidenceClass: "contemporaneous",
+      confidence: "medium",
+      explanation:
+        "A civilian eyewitness account written and published within about a year of the battle — close in time, though composed after the outcome was known. Not equivalent to a diary kept during the fighting, and far closer than a postwar memoir.",
+      signals: ["civilian eyewitness author", "published 1864 about July 1863"],
+    },
+    perspective: {
+      region: "north",
+      state: "PA",
+      place: "Gettysburg, Pa.",
+      socialPositions: ["civilian"],
+      alignment: "unknown",
+      basis: "curated",
+      note:
+        "A Gettysburg civilian's account; no political alignment is assigned beyond what the text itself argues.",
+    },
+    raw: {},
+    provenance:
+      "Author, title, publisher, and 1864 publication are established public record for this widely cited early account. URL is a verified-pattern loc.gov search deep link; validate with scripts/validate-links.ts.",
+  },
+  {
+    id: "demo:alleman-at-gettysburg-1889",
+    provider: "demo",
+    providerItemId: "alleman-at-gettysburg-1889",
+    url: "https://www.loc.gov/search/?q=alleman+at+gettysburg+what+a+girl+saw",
+    title: "At Gettysburg, or What a Girl Saw and Heard of the Battle",
+    creator: "Tillie Pierce Alleman",
+    dates: {
+      created: "1889",
+      eventDate: "1863-06-26 – 1863-07-04",
+      sortYear: 1889,
+      display: "Published 1889, describing June–July 1863",
+    },
+    place: "Gettysburg, Pa. (events); New York (published)",
+    state: "PA",
+    format: "memoir",
+    formatLabel: "Civilian memoir (published 1889)",
+    subjects: ["Gettysburg", "Civilians", "Women", "Pennsylvania"],
+    description:
+      "The memoir of Tillie Pierce, a Gettysburg teenager during the battle, written and published twenty-six years later. A vivid civilian account — and a textbook case of retrospective firsthand evidence, shaped by decades of memory and the battle's later fame. Read it beside the 1864 Jacobs account of the same days.",
+    transcript: {
+      available: false,
+      isOcr: false,
+      sourceNote:
+        "No text is bundled: this reference entry deliberately carries no quotation rather than an unverified one. See the archive link for the 1889 edition.",
+    },
+    scanAvailable: false,
+    rights: {
+      statement: "Published 1889; in the public domain.",
+      allowsRedistribution: true,
+    },
+    citation: {
+      creator: "Tillie Pierce Alleman",
+      title: "At Gettysburg, or What a Girl Saw and Heard of the Battle",
+      date: "1889",
+      archiveName: "Library of Congress (catalog search)",
+      url: "https://www.loc.gov/search/?q=alleman+at+gettysburg+what+a+girl+saw",
+      locator: "New York: W. Lake Borland, 1889",
+      accessed: ACCESSED,
+    },
+    classification: {
+      evidenceClass: "retrospective-firsthand",
+      confidence: "high",
+      explanation:
+        "A firsthand civilian account written twenty-six years after the events. Essential testimony about civilian experience — and retrospective: memory, later reading, and the battle's fame shape it.",
+      signals: ["memoir", "published 1889 about July 1863"],
+    },
+    perspective: {
+      region: "north",
+      state: "PA",
+      place: "Gettysburg, Pa.",
+      socialPositions: ["civilian", "woman-home-front"],
+      alignment: "unknown",
+      basis: "curated",
+      note: "A Gettysburg civilian's retrospective account.",
+    },
+    raw: {},
+    provenance:
+      "Author, title, publisher, and 1889 publication are established public record for this widely cited memoir. URL is a verified-pattern loc.gov search deep link; validate with scripts/validate-links.ts.",
+  },
 ];
 
 // ─── Archive index entries (Valley of the Shadow, DocSouth, LOC collections) ─
@@ -1249,35 +1372,75 @@ const INDEXES: SourceRecord[] = [
     sortYear: 1863,
   }),
   indexEntry({
-    id: "valley:valley-newspapers",
+    id: "valley:valley-newspapers-augusta",
     url: "https://valley.lib.virginia.edu/",
-    title: "Valley of the Shadow — Newspapers (Augusta & Franklin Counties)",
+    title: "Valley of the Shadow — Newspapers: Augusta County, Va. (Staunton)",
     description:
-      "Full-text transcriptions of Staunton (Va.) and Chambersburg/Franklin County (Pa.) newspapers, 1857–1870 — matched Southern and Northern local press for the same years, built for exactly the comparison this app performs. Navigate: Valley of the Shadow → Newspapers.",
+      "Full-text transcriptions of Staunton, Virginia newspapers, 1857\u20131870 \u2014 the Southern half of the Valley project's matched local press. Navigate: Valley of the Shadow \u2192 Newspapers \u2192 Augusta County.",
     archiveName: "Valley of the Shadow, University of Virginia Library",
     collection: "Valley of the Shadow",
-    region: "border",
-    subjects: ["Newspapers", "Virginia", "Pennsylvania"],
-    locator: "Newspapers section",
+    state: "VA",
+    place: "Augusta County, Va.",
+    region: "south",
+    subjects: ["Newspapers", "Virginia", "Staunton"],
+    locator: "Newspapers \u2192 Augusta County",
     provenance: VALLEY_PROV,
     social: ["newspaper-editor"],
-    yearRange: "1857–1870",
+    yearRange: "1857\u20131870",
     sortYear: 1861,
   }),
   indexEntry({
-    id: "valley:valley-soldiers-records",
+    id: "valley:valley-newspapers-franklin",
     url: "https://valley.lib.virginia.edu/",
-    title: "Valley of the Shadow — Soldiers' Records & Dossiers",
+    title: "Valley of the Shadow — Newspapers: Franklin County, Pa. (Chambersburg)",
     description:
-      "Compiled service dossiers for soldiers from Augusta and Franklin Counties, linking men to units, engagements, and fates. Navigate: Valley of the Shadow → Soldiers' Records.",
+      "Full-text transcriptions of Chambersburg / Franklin County, Pennsylvania newspapers, 1857\u20131870 \u2014 the Northern half of the Valley project's matched local press, printed on the route of the Gettysburg campaign. Navigate: Valley of the Shadow \u2192 Newspapers \u2192 Franklin County.",
     archiveName: "Valley of the Shadow, University of Virginia Library",
     collection: "Valley of the Shadow",
-    region: "border",
+    state: "PA",
+    place: "Franklin County, Pa.",
+    region: "north",
+    subjects: ["Newspapers", "Pennsylvania", "Chambersburg", "Gettysburg campaign"],
+    locator: "Newspapers \u2192 Franklin County",
+    provenance: VALLEY_PROV,
+    social: ["newspaper-editor"],
+    yearRange: "1857\u20131870",
+    sortYear: 1863,
+  }),
+  indexEntry({
+    id: "valley:valley-soldiers-augusta",
+    url: "https://valley.lib.virginia.edu/",
+    title: "Valley of the Shadow — Soldiers' Records: Augusta County, Va.",
+    description:
+      "Compiled service dossiers for soldiers from Augusta County, Virginia, linking men to units, engagements, and fates. Navigate: Valley of the Shadow \u2192 Soldiers' Records \u2192 Augusta County.",
+    archiveName: "Valley of the Shadow, University of Virginia Library",
+    collection: "Valley of the Shadow",
+    state: "VA",
+    place: "Augusta County, Va.",
+    region: "south",
     subjects: ["Soldiers", "Rosters", "Military records"],
-    locator: "Soldiers' Records section",
+    locator: "Soldiers' Records \u2192 Augusta County",
     provenance: VALLEY_PROV,
     social: ["enlisted-soldier", "officer"],
-    yearRange: "1861–1865",
+    yearRange: "1861\u20131865",
+    sortYear: 1862,
+  }),
+  indexEntry({
+    id: "valley:valley-soldiers-franklin",
+    url: "https://valley.lib.virginia.edu/",
+    title: "Valley of the Shadow — Soldiers' Records: Franklin County, Pa.",
+    description:
+      "Compiled service dossiers for soldiers from Franklin County, Pennsylvania, linking men to units, engagements, and fates. Navigate: Valley of the Shadow \u2192 Soldiers' Records \u2192 Franklin County.",
+    archiveName: "Valley of the Shadow, University of Virginia Library",
+    collection: "Valley of the Shadow",
+    state: "PA",
+    place: "Franklin County, Pa.",
+    region: "north",
+    subjects: ["Soldiers", "Rosters", "Military records"],
+    locator: "Soldiers' Records \u2192 Franklin County",
+    provenance: VALLEY_PROV,
+    social: ["enlisted-soldier", "officer"],
+    yearRange: "1861\u20131865",
     sortYear: 1862,
   }),
   indexEntry({

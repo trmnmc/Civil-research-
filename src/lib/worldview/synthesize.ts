@@ -54,12 +54,23 @@ function detectTopics(record: SourceRecord): string[] {
   );
 }
 
+/**
+ * Independence heuristic: distinct origins. A named creator identifies an
+ * origin; newspaper records without one are keyed by their PUBLICATION
+ * (LCCN), so a paper's title record plus its own issues — one editorial
+ * voice — never count as multiple independent sources.
+ */
+export function independenceKey(r: SourceRecord): string {
+  if (r.creator) return `creator:${r.creator}`;
+  const lccn =
+    (typeof r.raw?.lccn === "string" ? (r.raw.lccn as string) : undefined) ??
+    r.providerItemId.match(/\bsn\d{8}\b/)?.[0];
+  if (lccn) return `publication:${lccn}`;
+  return `item:${r.providerItemId}`;
+}
+
 function independentCount(records: SourceRecord[]): number {
-  // Independence heuristic: distinct creator+provider item.
-  const keys = new Set(
-    records.map((r) => `${r.creator ?? r.providerItemId}`),
-  );
-  return keys.size;
+  return new Set(records.map(independenceKey)).size;
 }
 
 export function describeProfile(lens: LensState, asOf: string): string {
@@ -187,13 +198,13 @@ export function synthesizeRuleBased(
     const independent = independentCount(recs);
     if (independent >= 2) {
       claims.push({
-        text: `${topic[0].toUpperCase()}${topic.slice(1)} was in front of readers in this selection: ${recs.length} of the retrieved sources, from ${independent} independent origins, address it directly.`,
+        text: `${topic[0].toUpperCase()}${topic.slice(1)} is addressed by ${recs.length} of the retrieved records or their catalog descriptions, from ${independent} independent origins.`,
         evidence: recs.slice(0, 6).map((r) => r.id),
         kind: "knowledge",
       });
     } else {
       claims.push({
-        text: `A single source in this selection addresses ${topic}; treat it as one author's view rather than a community's.`,
+        text: `Only one independent source in this selection addresses ${topic}; treat it as one author's view rather than a community's.`,
         evidence: recs.slice(0, 2).map((r) => r.id),
         kind: "knowledge",
         caveat: "Single-source basis — not generalizable.",
@@ -201,29 +212,32 @@ export function synthesizeRuleBased(
     }
   }
 
-  // ── Stakes claims from official/public-argument documents ──
+  // ── Stakes claims from official/public-argument documents that carry
+  //    their own text (never from curator descriptions alone) ──
   const stakesDocs = usable.filter(
     (r) =>
       (r.classification.evidenceClass === "official-record" ||
         r.classification.evidenceClass === "public-argument") &&
-      r.description,
+      r.transcript.text,
   );
   if (independentCount(stakesDocs) >= 2) {
     claims.push({
-      text: `Official acts and public arguments in this selection stated their stakes openly — see the archive descriptions and document text beside each citation for what their authors said was at issue.`,
+      text: `Several official acts and public arguments in this selection state their stakes in their own words — open the citations beside this claim to read what their authors said was at issue.`,
       evidence: stakesDocs.slice(0, 6).map((r) => r.id),
       kind: "stakes",
     });
   }
 
-  // ── Language claims from period vocabulary actually present ──
+  // ── Language claims from period vocabulary in the DOCUMENTS' OWN TEXT.
+  //    Curated descriptions and subject terms are modern prose and are
+  //    never presented as period vocabulary. ──
   const vocabularyHits: { word: string; recs: SourceRecord[] }[] = [];
-  for (const word of ["disunion", "rebel", "secesh", "contraband", "neutrality", "abolition", "federal"]) {
+  for (const word of [
+    "disunion", "rebel", "rebellion", "secesh", "contraband", "neutrality",
+    "abolition", "federal", "slavery", "institution", "subduing",
+  ]) {
     const recs = usable.filter((r) =>
-      [r.title, r.description ?? "", r.transcript.text ?? ""]
-        .join(" ")
-        .toLowerCase()
-        .includes(word),
+      (r.transcript.text ?? "").toLowerCase().includes(word),
     );
     if (recs.length > 0) vocabularyHits.push({ word, recs });
   }
@@ -233,7 +247,7 @@ export function synthesizeRuleBased(
       ...new Set(vocabularyHits.flatMap((v) => v.recs.map((r) => r.id))),
     ].slice(0, 6);
     claims.push({
-      text: `Period vocabulary present in these sources includes: ${words.join(", ")}. The words a community used are themselves evidence of how it framed events.`,
+      text: `Vocabulary in these documents' own text includes: ${words.join(", ")}. The words their authors chose are themselves evidence of how events were framed.`,
       evidence,
       kind: "language",
     });

@@ -35,9 +35,12 @@ export interface ClassificationInput {
 
 const WAR_ERA: [number, number] = [1850, 1877];
 
+// "Veteran" is deliberately absent: it was heavy CONTEMPORANEOUS usage
+// 1863-65 ("Veteran Volunteers", "veteranized") and must not mark wartime
+// documents as postwar memory.
 const RETROSPECTIVE_HINTS = [
   "memoir", "reminiscence", "recollection", "looking back", "years after",
-  "veteran", "as i remember", "autobiography", "life and times",
+  "as i remember", "autobiography", "life and times",
 ];
 
 const OFFICIAL_HINTS = [
@@ -58,9 +61,14 @@ const INDEX_HINTS = [
 ];
 
 const SECONDARY_HINTS = [
-  "history of", "a study", "essay on", "centennial", "commemorat",
-  "anniversary", "historical society quarterly", "biography of",
+  "history of", "a study", "essay on", "historical society quarterly",
+  "biography of",
 ];
+
+// Commemorative vocabulary marks secondary material only when the item is
+// undated or postdates the era: anniversary addresses were a major PERIOD
+// genre (anti-slavery society anniversaries, First of August orations).
+const COMMEMORATIVE_HINTS = ["centennial", "commemorat", "anniversary"];
 
 function containsAny(text: string, hints: string[]): string | undefined {
   const lower = text.toLowerCase();
@@ -94,7 +102,11 @@ export function classifySource(input: ClassificationInput): Classification {
   }
 
   // ── Secondary context ──
-  const secondaryHit = containsAny(text, SECONDARY_HINTS);
+  const commemorativeHit =
+    createdYear === undefined || createdYear > 1877
+      ? containsAny(text, COMMEMORATIVE_HINTS)
+      : undefined;
+  const secondaryHit = containsAny(text, SECONDARY_HINTS) ?? commemorativeHit;
   const clearlyModern = createdYear !== undefined && createdYear > 1900 && !eventYear;
   if (secondaryHit || (createdYear !== undefined && createdYear > 1930 && input.format !== "memoir" && input.format !== "narrative")) {
     if (secondaryHit) signals.push(`description suggests scholarship (“${secondaryHit}”)`);

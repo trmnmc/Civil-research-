@@ -74,6 +74,37 @@ describe("historical aliases", () => {
     ).toBe(true);
   });
 
+  it("expands Mc names end-to-end through query interpretation", () => {
+    const interp = interpretQuery("McClellan dispatches from the Peninsula");
+    expect(interp.effectiveTerms).toContain("M'Clellan");
+    const interp2 = interpretQuery("letters of George B. McClellan");
+    expect(interp2.effectiveTerms).toContain("M'Clellan");
+    const interp3 = interpretQuery("M'Clellan at Antietam");
+    expect(interp3.effectiveTerms).toContain("McClellan");
+  });
+
+  it("never conflates a state regiment with the same-numbered USCT regiment", () => {
+    const units = parseUnits(
+      "54th Massachusetts colored regiment and the 20th Maine Infantry",
+    );
+    const ma = units.find((u) => u.state === "MA");
+    const me = units.find((u) => u.state === "ME");
+    expect(ma).toBeDefined();
+    expect(ma!.variants).toContain("54th Massachusetts (Colored)");
+    expect(
+      ma!.variants.some((v) => v.includes("United States Colored Troops")),
+    ).toBe(false);
+    expect(me).toBeDefined();
+    expect(me!.usct).toBe(false);
+    // Stateless explicit USCT references still expand to the full name.
+    const usct = parseUnits("muster rolls of the 3rd USCT");
+    expect(
+      usct.some((u) =>
+        u.variants.some((v) => v.includes("United States Colored Troops")),
+      ),
+    ).toBe(true);
+  });
+
   it("parses written-out ordinals", () => {
     const units = parseUnits("the Fifth Ohio at Winchester");
     expect(units.some((u) => u.state === "OH" && u.ordinal === 5)).toBe(true);
